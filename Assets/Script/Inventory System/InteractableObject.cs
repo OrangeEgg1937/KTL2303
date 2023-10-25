@@ -6,6 +6,10 @@ using UnityEngine;
 public abstract class InteractableObject : MonoBehaviour
 {
     // Interactable object attributes
+    private string objectName;{ // Name of the object
+        get { return objectName; }
+        set { objectName = value; }
+    }
     bool isUpgardeable; // Can the object be upgraded
 
     // Use method to interact with the object

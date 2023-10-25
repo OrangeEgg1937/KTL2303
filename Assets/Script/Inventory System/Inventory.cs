@@ -2,35 +2,59 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Inventory : MonoBehaviour
+[System.Serializable]
+public class Inventory
 {
     // Inventory attributes
     [Header("Inventory Attributes")]
-    [SerializeField] int capacity; // The maximum number of items that can be stored in the inventory
-    [SerializeField] int currentSize; // The current number of items in the inventory
-    [SerializeField] TextAsset JSON_Data; // The UI of the inventory
+    [SerializeField] private int capacity; // The maximum number of items that can be stored in the inventory
+    [SerializeField] private int currentSize; // The current number of items in the inventory
+    [SerializeField] private TextAsset JSON_Data; // The initial of the inventory
 
     List<Item> items; // The list of items in the inventory
 
-    // When the inventory is created, create items
-    void awake()
-    {
-        items = new List<Item>();
-    }
-
-    // Initialize the inventory from the first time
-    void Start()
+    // Setup the inventory
+    public void Setup()
     {
         if (JSON_Data != null)
         {
-            // import the data from JSON file
-            items = JsonUtility.FromJson<Item>(JSON_Data.text);
-        }        
+            // import the data from JSON file from array to list
+            items = new List<Item> { JsonUtility.FromJson<Item>(JSON_Data.text) };
+        }
+        else
+        {
+            items = new List<Item>();
+        }
     }
 
-    // Update is called once per frame
-    void Update()
+    // Add an item to the inventory
+    public bool AddItem(Item item)
     {
-        
+        if (currentSize < capacity)
+        {
+            items.Add(item);
+            currentSize++;
+            return true;
+        }
+        else return false;
+    }
+
+    // Take the item from the inventory
+    public Item TakeItem(int index)
+    {
+        if (index < currentSize)
+        {
+            Item item = items[index];
+            items.RemoveAt(index);
+            currentSize--;
+            return item;
+        }
+        else return null;
+    }
+
+    // Get the item list from the inventory
+    public List<Item> GetItemList()
+    {
+        return items;
     }
 }

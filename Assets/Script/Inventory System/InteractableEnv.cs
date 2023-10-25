@@ -3,32 +3,13 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // The object in the environment that can be interacted with
-public class InteractableEnv : InteractableObject
+public abstract class InteractableEnv : InteractableObject
 {
-    public override void Interact()
-    {
-        
-    }
+    // Interactable object attributes
+    [Header("Interactable Environment Object Attributes")]
+    [SerializeField] private Transform interactionPoint;
+    [SerializeField] private float interactionRadius = 1f;
 
-    public override void Interact(GameObject target)
-    {
-       
-    }
-
-    public override void Upgrade(GameObject source)
-    {
-        
-    }
-
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+    // Constructor
+    protected InteractableEnv(bool upgardeable) : base(upgardeable) { }
 }

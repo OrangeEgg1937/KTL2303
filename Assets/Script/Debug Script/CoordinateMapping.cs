@@ -29,10 +29,10 @@ public class CoordinateMapping : MonoBehaviour
     private void DisplayCoordinates()
     {
         // Get the coordinates of x-axis
-        coordinates.x = Mathf.RoundToInt(transform.parent.position.x / UnityEditor.EditorSnapSettings.move.x);
+        coordinates.x = Mathf.RoundToInt(transform.parent.position.x);
 
         // Get the coordinates of z-axis
-        coordinates.y = Mathf.RoundToInt(transform.parent.position.z / UnityEditor.EditorSnapSettings.move.z);
+        coordinates.y = Mathf.RoundToInt(transform.parent.position.z);
 
         // Display the coordinates
         label.text = "(" + coordinates.x + "," + coordinates.y + ")";

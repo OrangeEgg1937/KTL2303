@@ -4476,7 +4476,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: 0.37821722, y: 0.40438458, z: -0.18856774, w: 0.8110901}
-  m_LocalPosition: {x: -3, y: 5, z: 9}
+  m_LocalPosition: {x: -5, y: 6, z: 9}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11190,6 +11190,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Lamp
       objectReference: {fileID: 0}
+    - target: {fileID: 4856062053404644913, guid: 205735fc555d8c04ab31b909703976f0, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5201624692154190987, guid: 205735fc555d8c04ab31b909703976f0, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -11229,6 +11233,10 @@ PrefabInstance:
     - target: {fileID: 5201624692154190987, guid: 205735fc555d8c04ab31b909703976f0, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6369443121513609188, guid: 205735fc555d8c04ab31b909703976f0, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11400,6 +11408,10 @@ PrefabInstance:
     - target: {fileID: 7603682921969438261, guid: e95f1714e11cb4b4cb39dad560727ebe, type: 3}
       propertyPath: m_Name
       value: Couch
+      objectReference: {fileID: 0}
+    - target: {fileID: 7603682921969438261, guid: e95f1714e11cb4b4cb39dad560727ebe, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

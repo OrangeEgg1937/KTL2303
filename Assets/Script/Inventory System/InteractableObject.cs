@@ -10,6 +10,7 @@ public abstract class InteractableObject : MonoBehaviour
     // because we can get it by using gameObject.name from MonoBehaviour
 
     private bool isUpgardeable; // Can the object be upgraded
+    private List<Status> status;
 
     // Constructor
     protected InteractableObject(bool upgardeable)

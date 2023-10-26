@@ -21,7 +21,14 @@ public abstract class InteractableObject : MonoBehaviour
     // Use method to interact with the object
     public abstract void Interact(); // Holder interact with the object ONLY
     public abstract void Interact(GameObject target); // Holder interact with the object to a target
-    
+
     // Upgrading the object
     public abstract void Upgrade(GameObject source);
+
+    // Check the input status is exist in the list or not
+    public bool CheckStatus(Status status)
+    {
+        print("This status is:" + this.status.Contains(status));
+        return this.status.Contains(status);
+    }
 }

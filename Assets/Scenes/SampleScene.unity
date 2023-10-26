@@ -1490,7 +1490,6 @@ GameObject:
   - component: {fileID: 208073164}
   - component: {fileID: 208073163}
   - component: {fileID: 208073167}
-  - component: {fileID: 208073169}
   - component: {fileID: 208073168}
   - component: {fileID: 208073170}
   m_Layer: 0
@@ -1615,8 +1614,8 @@ MonoBehaviour:
   m_ActionEvents:
   - m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 208073169}
-        m_TargetAssemblyTypeName: PlayerController, Assembly-CSharp
+      - m_Target: {fileID: 208073170}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
         m_MethodName: Move
         m_Mode: 0
         m_Arguments:
@@ -1661,19 +1660,6 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 116
   m_CollisionDetection: 0
---- !u!114 &208073169
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 208073162}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 3b0e0f816567c7446a3a6079aaead1cc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 5
 --- !u!114 &208073170
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1686,6 +1672,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd1a02a187fb4f4439fc9edd777d06ee, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  HP: 50
+  isDead: 0
+  bag:
+    capacity: 0
+    currentSize: 0
+    JSON_Data: {fileID: 0}
+  interactionPoint: {fileID: 0}
+  interactionRadius: 1
+  nearbyEnv: []
+  speed: 5
 --- !u!1001 &210196681
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5917,8 +5913,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7faf68abf234e77448d1fa4c884b25d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  interactionPoint: {fileID: 0}
-  interactionRadius: 1
   inventory:
     capacity: 0
     currentSize: 0

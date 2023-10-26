@@ -29,9 +29,8 @@ public abstract class Character : MonoBehaviour
         this.bag = bag;
     }
 
-
     // Damage the character, return true if the character is still alive
-    public bool Damage(uint damage)
+    public bool GetDamage(uint damage)
     {
         if(isDead) return false;
         if (HP > damage)

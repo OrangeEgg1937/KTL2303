@@ -36,28 +36,31 @@ public class Player : Character
     // Start is called before the first frame update
     void Start()
     {
-
+        nearbyObject = new Collider[5];
     }
 
     // Update is called once per frame
     void Update()
     {
         // Find the nearby object
-        nearbyObject = Physics.OverlapSphere(transform.position, searchingDistance, interactionLayerMask);
+        numOfNearbyObject = Physics.OverlapSphereNonAlloc(transform.position, searchingDistance, nearbyObject, interactionLayerMask);
 
-        numOfNearbyObject = nearbyObject.Length;
-
-        if (numOfNearbyObject > 0 && Input.GetKeyDown(KeyCode.E))
+        if (numOfNearbyObject > 0)
         {
             // Show the tips
             transform.GetChild(0).gameObject.SetActive(true);
 
-            // Interact with the object
-            var target = nearbyObject[0].GetComponent<InteractableObject>();
-            if (target != null) { target.Interact(); }
+            // Interact with the object if the E key is pressed
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                // Interact with the object
+                InteractableObject target = nearbyObject[0].GetComponent<InteractableObject>();
+                if (target != null) { target.Interact(); }
 
-            // Trigger the listener
-            playerAction.Invoke("Player interact with " + target.name);
+                // Trigger the listener
+                playerAction.Invoke("Player interact with " + target.name);
+            }
+
         }
         else
         {

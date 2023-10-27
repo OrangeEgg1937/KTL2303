@@ -15,6 +15,11 @@ public class GameEnvironmentHandler : MonoBehaviour
         print(message);
     }
 
+    public void ErrorMessage()
+    {
+        print("TEST");
+    }
+
     // Save the log into the current directory
     public void ExportLog()
     {

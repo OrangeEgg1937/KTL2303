@@ -9,7 +9,6 @@ public class Wardrobe : InteractableEnv
     // Constructor
     Wardrobe() : base(false) { }
 
-
     public override void Interact()
     {
         
@@ -27,14 +26,14 @@ public class Wardrobe : InteractableEnv
 
     private void Awake()
     {
-        inventory.Setup();
+        gameObject.layer = INTERACTABLE_OBJECT_LAYER_CODE;
     }
 
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        inventory.Setup();
     }
 
     // Update is called once per frame

@@ -7,15 +7,16 @@ public abstract class Character : MonoBehaviour
 {
     // Character attributes
     [Header("Character Attributes")]
-    [SerializeField] private uint HP = 50; // Health point
+    [SerializeField] protected uint HP = 50; // Health point
     [SerializeField] public bool isDead = false; // Damage of the character
-    [SerializeField] private Inventory bag; // The bag of the character
+    [SerializeField] protected Inventory bag; // The bag of the character
 
     // Character nearby environment
     [Header("Character Nearby Environment")]
-    [SerializeField] private Transform interactionPoint; // The interaction point of the character
-    [SerializeField] private float interactionRadius = 1f; // The interaction radius of the character
-    [SerializeField] private List<InteractableEnv> nearbyEnv; // The list of nearby environment objects
+    [SerializeField] protected float searchingDistance = 1f; // The interaction radius of the character
+    [SerializeField] protected Collider[] nearbyObject; // The list of nearby environment objects
+    [SerializeField] protected int numOfNearbyObject = 0;
+    [SerializeField] protected LayerMask interactionLayerMask;
 
     // <Constructor>
     protected Character() { }

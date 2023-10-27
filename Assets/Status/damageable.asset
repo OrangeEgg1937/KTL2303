@@ -12,3 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1de35471ab6e07d4c9b53b17f8ef93e4, type: 3}
   m_Name: damageable
   m_EditorClassIdentifier: 
+  statusName: damageable
+  statusDescription: the object available to give some damage to other

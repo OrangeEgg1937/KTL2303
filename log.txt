@@ -1,45 +1,122 @@
-[5.017324]Player moving
-[5.019392]Player moving
-[5.020194]Player moving
-[6.281982]Player moving
-[6.564636]Player moving
-[6.833406]Player interact with Twin Wardrobe
-[7.910913]Player moving
-[7.911391]Player moving
-[8.11847]Player moving
-[8.47363]Player moving
-[8.496373]Player moving
-[34.099]Player moving
-[34.09949]Player moving
-[34.48779]Player moving
-[34.51101]Player moving
-[34.80035]Player moving
-[35.11424]Player moving
-[35.24378]Player moving
-[35.32802]Player moving
-[35.53292]Player moving
-[35.70202]Player moving
-[36.12122]Player moving
-[38.78841]Player moving
-[38.78897]Player moving
-[38.78939]Player moving
-[39.12031]Player moving
-[39.16778]Player moving
-[39.30191]Player moving
-[39.30237]Player moving
-[39.45824]Player moving
-[39.61666]Player moving
-[39.98541]Player moving
-[40.38124]Player moving
-[40.38171]Player moving
-[41.69997]Player moving
-[45.31231]Player moving
-[45.31277]Player moving
-[46.24332]Player moving
-[46.51219]Player moving
-[46.75056]Player moving
-[47.87409]Player moving
-[47.87463]Player moving
-[48.14469]Player moving
-[48.6482]Player moving
-[48.95147]Player moving
+[5.761688]Player moving to 5:0
+[5.763694]Player moving to 5:0
+[5.775337]Player moving to 4.9:0
+[6.040037]Player moving to 3.976475:0.9328601
+[6.16007]Player moving to 3.976475:1.525788
+[6.406398]Player moving to 4.794875:2.351542
+[7.046636]Player moving to 4.794875:3.824914
+[7.138646]Player moving to 4.794875:3.824914
+[7.139208]Player moving to 4.794875:3.824914
+[7.302958]Player moving to 5.523477:3.75464
+[7.345586]Player moving to 5.664898:3.613219
+[7.556128]Player moving to 5.664898:2.643167
+[7.731393]Player moving to 5.157231:2.131443
+[7.798701]Player moving to 5.157231:1.731443
+[7.854209]Player moving to 5.298653:1.590022
+[7.905107]Player moving to 5.580195:1.590022
+[9.796654]Player moving to 5.580195:1.590022
+[9.797152]Player moving to 5.580195:1.590022
+[9.858484]Player moving to 5.30435:1.590022
+[10.0077]Player moving to 4.834434:1.127712
+[10.01488]Player moving to 4.834434:1.127712
+[10.08406]Player moving to 5.117276:0.8448697
+[10.24499]Player moving to 5.876174:0.8448697
+[10.26505]Player moving to 5.946885:0.9155804
+[10.35146]Player moving to 5.946885:1.31558
+[10.42191]Player moving to 5.674944:1.583492
+[10.58104]Player moving to 4.928698:1.583492
+[10.60052]Player moving to 4.860597:1.516326
+[10.69251]Player moving to 4.860597:1.12458
+[10.72682]Player moving to 5.002018:0.9831585
+[10.86534]Player moving to 5.674782:0.9831585
+[10.88398]Player moving to 5.745492:1.053869
+[11.07407]Player moving to 5.745492:1.928059
+[11.08589]Player moving to 5.674782:1.99877
+[11.23224]Player moving to 5.020785:1.99877
+[14.30683]Player moving to 5.020785:1.99877
+[14.30741]Player moving to 5.020785:1.99877
+[14.83799]Player moving to 5.020612:3.824914
+[14.94822]Player moving to 5.020612:3.824914
+[14.94888]Player moving to 5.020612:3.824914
+[15.35833]Player moving to 5.020612:2.021345
+[15.40524]Player moving to 5.020612:2.021345
+[15.40578]Player moving to 5.020612:2.021345
+[15.51628]Player moving to 5.604619:2.021345
+[15.57136]Player moving to 5.74604:2.162766
+[15.72083]Player moving to 5.74604:2.880604
+[15.95533]Player moving to 5.022718:3.613302
+[16.18287]Player moving to 5.022547:3.824914
+[16.31781]Player moving to 5.022547:3.824914
+[16.31884]Player moving to 5.022547:3.824914
+[16.60766]Player moving to 5.022547:2.58193
+[20.41876]Player moving to 5.022547:2.58193
+[20.41928]Player moving to 5.022547:2.58193
+[20.41962]Player moving to 5.022547:2.58193
+[20.49928]Player moving to 4.739704:2.864773
+[21.02083]Player moving to 4.739704:3.824914
+[24.89243]Player moving to 4.739704:3.824914
+[24.89294]Player moving to 4.739704:3.824914
+[25.21525]Player moving to 4.739704:2.421763
+[25.30602]Player moving to 4.739704:2.421763
+[25.30649]Player moving to 4.739704:2.421763
+[25.81174]Player moving to 4.739704:3.824914
+[25.82524]Player moving to 4.739704:3.824914
+[25.82575]Player moving to 4.739704:3.824914
+[26.94798]Player moving to 9.045158:3.444454
+[27.10559]Player interact with Twin Wardrobe
+[27.66637]Player moving to 9.044981:3.444454
+[27.66688]Player moving to 9.044981:3.444454
+[27.69176]Player moving to 8.944981:3.444454
+[28.30633]Player moving to 7.043447:5.35244
+[28.64723]Player moving to 6.75864:5.35244
+[28.9179]Player moving to 6.75864:5.35244
+[28.91896]Player moving to 6.75864:5.35244
+[29.21954]Player moving to 6.863224:6.579976
+[29.27397]Player moving to 6.721803:6.721397
+[29.46619]Player moving to 5.836012:6.721397
+[29.49937]Player moving to 5.694591:6.579976
+[29.81445]Player moving to 5.694591:6.175086
+[29.92648]Player moving to 5.694591:6.175086
+[29.92711]Player moving to 5.694591:6.175086
+[30.16848]Player moving to 6.788343:6.271154
+[30.41351]Player moving to 7.622022:5.436378
+[30.4233]Player moving to 7.622022:5.336378
+[30.43666]Player moving to 7.554543:5.267829
+[30.73876]Player moving to 6.758637:5.267829
+[45.95457]Player moving to 6.75864:5.267829
+[45.95511]Player moving to 6.75864:5.267829
+[46.1217]Player moving to 6.814097:4.476884
+[46.37592]Player moving to 6.75949:4.3962
+[46.40003]Player moving to 6.75949:4.2962
+[46.43613]Player moving to 6.900912:4.154779
+[46.81393]Player moving to 8.566725:4.154779
+[46.89425]Player moving to 8.849569:3.871936
+[47.10749]Player moving to 9.078576:3.871936
+[47.37956]Player interact with Twin Wardrobe
+[48.02949]Player moving to 9.078576:3.871936
+[48.03005]Player moving to 9.078576:3.871936
+[48.1655]Player moving to 8.988398:3.509185
+[48.18034]Player moving to 8.988398:3.509185
+[48.18098]Player moving to 8.988398:3.509185
+[48.30094]Player moving to 9.044994:3.509185
+[56.20094]Player moving to 9.044981:3.509185
+[56.20152]Player moving to 9.044981:3.509185
+[56.38917]Player moving to 8.165161:3.509694
+[56.40257]Player moving to 8.165161:3.509694
+[56.40311]Player moving to 8.165161:3.509694
+[56.70504]Player moving to 9.044984:3.511949
+[56.89294]Player interact with Twin Wardrobe
+[57.39121]Player interact with Twin Wardrobe
+[77.64859]Player moving to 9.044981:3.511949
+[77.64919]Player moving to 9.044981:3.511949
+[77.94517]Player moving to 7.690387:3.513436
+[78.68839]Player moving to 5.433433:1.212068
+[78.97272]Player moving to 4.114137:1.212068
+[79.1496]Player moving to 3.501046:1.822469
+[79.23832]Player moving to 3.501046:2.222469
+[79.28866]Player moving to 3.501046:2.222469
+[79.28914]Player moving to 3.501046:2.222469
+[79.4417]Player moving to 4.201046:2.222469
+[80.91839]Player moving to 4.201046:2.222469
+[80.9191]Player moving to 4.201046:2.222469
+[81.08766]Player moving to 5.037181:2.222469

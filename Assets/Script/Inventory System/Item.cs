@@ -2,12 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Item : InteractableObject
+// Create the object status
+[CreateAssetMenu(fileName = "Item", menuName = "Item", order = 1)]
+[System.Serializable]
+public class Item : ScriptableObject
 {
     // Item attributes
     [Header("Item Attributes")]
-    [SerializeField] private int id; // The id of the item
-
-    // Constructor
-    protected Item(bool upgardeable) : base(upgardeable) { }
+    [SerializeField] public int id; // The id of the item
+    [SerializeField] public string name;
+    [SerializeField] public string description;
+    [SerializeField] public string icon;
+    
 }

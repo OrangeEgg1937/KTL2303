@@ -3,11 +3,10 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // Define status interface
-public interface IStatusProperty
+public interface IFavorableConditionsProperty
 {
-    // Checking the status is exist in the object or not
+    // Checking the Conditions is exist in the object or not
     public bool CheckStatus(Status status);
-    public bool CheckStatus(Status status, FavorableConditions conditions[]);
 
     // Adding the status into the object
     public void AddStatus(Status status);

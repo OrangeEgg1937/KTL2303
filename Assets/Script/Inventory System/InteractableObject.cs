@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // This is a base class for all interactable objects in the game
-public abstract class InteractableObject : MonoBehaviour, IStatusProperty
+public abstract class InteractableObject : MonoBehaviour
 {
     // Interactable object attributes
     // We don't need the name of the object

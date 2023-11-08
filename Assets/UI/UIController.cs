@@ -1,24 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIController : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+
+    [Header("Plane")]
+    [SerializeField]
+    private List<GameObject> plane;
+
+    private void Start()
     {
-        
+        gameObject.BroadcastMessage("DisplayInfo", -1);
     }
 
-    // Update is called once per frame
-    void Update()
+    // Control the plane display
+    public void OnClickEvent(int button_id)
     {
-        
-    }
+        // Active the selected plane
+        plane[button_id].gameObject.SetActive(true);
 
-    // Button on click event
-    public void OnClickEvent()
-    {
-        print("I am clicked");
+        // Process their display method
+        gameObject.BroadcastMessage("DisplayInfo", button_id); 
     }
 }

@@ -28,7 +28,7 @@ public class NPC : Character
 
     private void Update()
     {
-
+        agent.destination = destination.position;
     }
 
     // NPC moving

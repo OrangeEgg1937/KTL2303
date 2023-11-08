@@ -23,7 +23,6 @@ public class Player : Character
     // Player interactive handler
     [Header("Player Action Handler")]
     [SerializeField] PlayerEvent playerAction = new PlayerEvent();
-
     // Constructor
     Player() : base(99999U) { }
 

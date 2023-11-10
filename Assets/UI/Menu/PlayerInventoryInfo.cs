@@ -10,9 +10,11 @@ public class PlayerInventoryInfo : MonoBehaviour, IPlaneDisplay
         if (id != 2)
         {
             gameObject.SetActive(false);
+            transform.GetChild(0).gameObject.SetActive(false);
             return;
         }
 
         gameObject.SetActive(true);
+        transform.GetChild(0).gameObject.SetActive(true);
     }
 }

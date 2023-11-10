@@ -12,6 +12,6 @@ public class Item : ScriptableObject
     [SerializeField] public int id; // The id of the item
     [SerializeField] public string name;
     [SerializeField] public string description;
-    [SerializeField] public string icon;
+    [SerializeField] public Sprite icon;
     
 }

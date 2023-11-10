@@ -5,13 +5,19 @@ using UnityEngine;
 public class Wardrobe : InteractableEnv
 {
     [SerializeField] private Inventory inventory; // The inventory of the wardrobe
+    [SerializeField] private GameObject Player;
+    [SerializeField] private Item item;
 
     // Constructor
     Wardrobe() : base(false) { }
 
     public override void Interact()
     {
-        
+        Player action = Player.GetComponent<Player>();
+        if (action.bag.AddItem(item))
+        {
+            print("Added");
+        }
     }
 
     public override void Interact(GameObject target)

@@ -9,7 +9,7 @@ public abstract class Character : MonoBehaviour
     [Header("Character Attributes")]
     [SerializeField] protected uint HP = 50; // Health point
     [SerializeField] public bool isDead = false; // Damage of the character
-    [SerializeField] protected Inventory bag; // The bag of the character
+    [SerializeField] public Inventory bag; // The bag of the character
 
     // Character nearby environment
     [Header("Character Nearby Environment")]

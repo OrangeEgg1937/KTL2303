@@ -18,9 +18,9 @@ public class Player : Character
     // Player attributes
     [Header("Player Attributes")]
     [SerializeField] private float speed = 5f; // Moving speed of the player
-    public uint investigative = 10;
-    public uint interrogation = 10;
-    public uint action = 30;
+    public uint Investigative = (uint)DataTransfer.investigation;
+    public uint Interrogation = (uint)DataTransfer.interrogation;
+    public uint Action = (uint)DataTransfer.action;
     public string bio = "This is player bio";
     private Rigidbody rigidbody; // Rigidbody of the player
     

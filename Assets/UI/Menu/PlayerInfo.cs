@@ -26,13 +26,13 @@ public class PlayerInfo : MonoBehaviour, IPlaneDisplay
         if (display == null) {return; }
         if (player == null) {return; }
 
-        display.text = player.investigative.ToString();
+        display.text = player.Investigative.ToString();
         
         display = interrogation.GetComponent<TextMeshProUGUI>();
-        display.text = player.interrogation.ToString();
+        display.text = player.Interrogation.ToString();
 
         display = action.GetComponent<TextMeshProUGUI>();
-        display.text = player.action.ToString();
+        display.text = player.Action.ToString();
 
         gameObject.SetActive(true);
     }

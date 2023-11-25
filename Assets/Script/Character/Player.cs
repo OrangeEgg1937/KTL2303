@@ -84,6 +84,6 @@ public class Player : Character
         rigidbody.velocity = input * speed;
 
         // Telling to the game enivronment
-        playerAction.Invoke("Player moving to " + transform.position.x + ":" + transform.position.z);
+        // playerAction.Invoke("Player moving to " + transform.position.x + ":" + transform.position.z);
     }
 }

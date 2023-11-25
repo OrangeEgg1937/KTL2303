@@ -42,4 +42,10 @@ public class NPC : Character
     {
 
     }
+
+    // When trigger is activated, generate potion
+    public void OnGoalComplete(string message)
+    {
+        print("Trigger Event: " + message);
+    }
 }

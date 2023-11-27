@@ -30,7 +30,6 @@ namespace Inworld.Sample
         }
 
 
-
         void OnCharacterRegistered(InworldCharacterData charData)
         {
             if (!IsUIReady)

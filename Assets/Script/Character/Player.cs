@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.XR;
 using static UnityEngine.GraphicsBuffer;
 
 [System.Serializable]
@@ -15,26 +16,34 @@ public class PlayerEvent : UnityEvent<string>
 
 public class Player : Character
 {
+
+    [SerializeField] private float rotationFactor = 1.0f;
     // Player attributes
     [Header("Player Attributes")]
     [SerializeField] private float speed = 5f; // Moving speed of the player
+    [SerializeField] private GameObject model;
     public uint Investigative = (uint)DataTransfer.investigation;
     public uint Interrogation = (uint)DataTransfer.interrogation;
     public uint Action = (uint)DataTransfer.action;
     public string bio = "This is player bio";
-    private Rigidbody rigidbody; // Rigidbody of the player
     
-
     // Player interactive handler
     [Header("Player Action Handler")]
     [SerializeField] PlayerEvent playerAction = new PlayerEvent();
     // Constructor
     Player() : base(99999U) { }
 
+    // Private member for the components
+    private CharacterController controller;
+    private Animator animator;
+    private Vector3 move;
+
     // Get the component of the player
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        // Assign the component
+        controller = GetComponent<CharacterController>();
+        animator = model.GetComponent<Animator>();
     }
 
     // Start is called before the first frame update
@@ -47,6 +56,8 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
+        controller.Move(move);
+
         // Find the nearby object
         numOfNearbyObject = Physics.OverlapSphereNonAlloc(transform.position, searchingDistance, nearbyObject, interactionLayerMask);
 
@@ -74,16 +85,34 @@ public class Player : Character
         }
     }
 
+    // Handle Rotation
+    void PlayerRotation()
+    {
+        Vector3 lookat = transform.position;
+        Quaternion currentRotation = transform.rotation;
+        Quaternion targetRotation = Quaternion.LookRotation(lookat);
+
+        Quaternion.Slerp(currentRotation, targetRotation, rotationFactor);
+    }
+
     // Move the player
-    public void Move(InputAction.CallbackContext content)
+    public void OnPlayerMove(InputAction.CallbackContext content)
     {
         // Get the input
         Vector3 input = new Vector3(content.ReadValue<Vector2>().x, 0, content.ReadValue<Vector2>().y);
 
         // Move the player
-        rigidbody.velocity = input * speed;
+        move = input * speed * Time.deltaTime;
 
-        // Telling to the game enivronment
-        // playerAction.Invoke("Player moving to " + transform.position.x + ":" + transform.position.z);
+        // Switch the animation
+        if (move == Vector3.zero)
+        {
+            animator.SetBool("isWalking", false);
+            PlayerRotation();
+        }
+        else
+        {
+            animator.SetBool("isWalking", true);
+        }
     }
 }

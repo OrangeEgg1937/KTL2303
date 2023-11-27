@@ -35,7 +35,7 @@ public class CoordinateMapping : MonoBehaviour
         coordinates.y = Mathf.RoundToInt(transform.parent.position.z);
 
         // Display the coordinates
-        label.text = "(" + coordinates.x + "," + coordinates.y + ")";
+        // label.text = "(" + coordinates.x + "," + coordinates.y + ")";
     }
 
     // Update the object name in the editor

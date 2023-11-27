@@ -39,9 +39,7 @@ namespace Inworld.Sample
         
         protected virtual void OnCharacterRegistered(InworldCharacterData charData)
         {
-            InworldCharacter currChar = InworldController.CurrentCharacter;
-            if (currChar != null) { print(currChar.BrainName); }
-
+            print(charData.brainName);
         }
     }
 }

@@ -1,8 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
-using UnityEngine.UIElements;
+using UnityEngine.Events;
+using UnityEngine.UI;
 
 public class ListItems : MonoBehaviour
 {
@@ -28,24 +30,19 @@ public class ListItems : MonoBehaviour
             transform.GetChild(i).gameObject.SetActive(true);
 
             // Get the inventory items
-            Item item = inventory.TakeItem(i);
+            Item item = inventory.GetItemInfo(i);
 
             // Write the item info to the child box
-            GameObject displayObject = transform.GetChild(i).gameObject;
+            DisplayItemInfo displayObject = transform.GetChild(i).gameObject.GetComponent<DisplayItemInfo>();
 
             // Check null
-            if (displayObject != null)
+            if (displayObject == null)
             {
                 continue;
             }
 
-            // Display image
-            Image image = displayObject.GetComponentInChildren<Image>();
-            image.sprite = item.icon;
+            displayObject.UpdateInfo(item, i);
 
-            // Display text
-            TextMeshProUGUI displayText = displayObject.GetComponentInChildren<TextMeshProUGUI>();
-            displayText.text = item.name;
         }
     }
 }

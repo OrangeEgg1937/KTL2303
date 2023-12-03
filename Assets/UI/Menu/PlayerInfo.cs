@@ -12,7 +12,6 @@ public class PlayerInfo : MonoBehaviour, IPlaneDisplay
 
     public void DisplayInfo(int id)
     {
-        print("Message received: " + id);
         if (id != 0)
         {
             gameObject.SetActive(false);

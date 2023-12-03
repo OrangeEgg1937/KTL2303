@@ -32,6 +32,7 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
             var player = FindObjectOfType<Player>();
             player.Action = player.Action - 1;
         }
+
     }
     public virtual void Interact(GameObject target) // Geheral interact method with object
     {

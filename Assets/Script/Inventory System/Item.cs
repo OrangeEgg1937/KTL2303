@@ -13,5 +13,11 @@ public class Item : ScriptableObject
     [SerializeField] public string name;
     [SerializeField] public string description;
     [SerializeField] public Sprite icon;
+
+    [Header("Status")]
+    [SerializeField] public List<Status> status;
+
+    [Header("Condition")]
+    [SerializeField] public List<FavorableConditions> Condition;
     
 }

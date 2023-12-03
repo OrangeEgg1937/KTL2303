@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEditor.Playables;
 using UnityEngine;
+using System.Linq;
 
 // Set a generic Unity event class
 
@@ -13,11 +14,12 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     // Interactable object attributes
     // We don't need the name of the object
     // because we can get it by using gameObject.name from MonoBehaviour
+    
     public const int INTERACTABLE_OBJECT_LAYER_CODE = 6;
 
     protected bool isUpgardeable; // Can the object be upgraded
-    protected List<Status> status;
-    protected List<FavorableConditions> conditions;
+    [Header("Interactable field")]
+    [SerializeField] protected List<Status> status;
     protected bool isInvestigated = false;
 
     private Player ability;
@@ -32,6 +34,7 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     {
         ability = (Player) FindObjectOfType(typeof(Player));
     }
+
 
     // Use method to interact with the object
     public virtual void Interact() // General interact method

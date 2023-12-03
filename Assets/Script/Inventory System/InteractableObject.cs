@@ -2,8 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+// Set a generic Unity event class
+
+
 // This is a base class for all interactable objects in the game
-public abstract class InteractableObject : MonoBehaviour
+public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavorableConditionsProperty
 {
     // Interactable object attributes
     // We don't need the name of the object
@@ -11,7 +14,8 @@ public abstract class InteractableObject : MonoBehaviour
     public const int INTERACTABLE_OBJECT_LAYER_CODE = 6;
 
     private bool isUpgardeable; // Can the object be upgraded
-    public List<Status> status;
+    private List<Status> status;
+    private List<FavorableConditions> conditions;
 
     // Constructor
     protected InteractableObject(bool upgardeable)
@@ -20,8 +24,16 @@ public abstract class InteractableObject : MonoBehaviour
     }
 
     // Use method to interact with the object
-    public abstract void Interact(); // Holder interact with the object ONLY
-    public abstract void Interact(GameObject target); // Holder interact with the object to a target
+    public virtual void Interact() // General interact method
+    {
+
+    }
+    public virtual void Interact(GameObject target) // Geheral interact method with object
+    {
+
+    }
+
+    // Set the 
 
     // Upgrading the object
     public abstract void Upgrade(GameObject source);
@@ -47,5 +59,22 @@ public abstract class InteractableObject : MonoBehaviour
             int index = this.status.IndexOf(status);
             this.status.RemoveAt(index);
         }
+    }
+
+    public abstract bool CheckStatus(Status status, FavorableConditions conditions);
+
+    public virtual bool CheckCondition(FavorableConditions conditions)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public virtual void AddCondition(FavorableConditions conditions)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public virtual void ReomveCondition(FavorableConditions conditions)
+    {
+        throw new System.NotImplementedException();
     }
 }

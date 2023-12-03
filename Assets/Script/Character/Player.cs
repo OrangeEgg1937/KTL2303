@@ -16,11 +16,9 @@ public class PlayerEvent : UnityEvent<string>
 
 public class Player : Character
 {
-
-    [SerializeField] private float rotationFactor = 1.0f;
     // Player attributes
     [Header("Player Attributes")]
-    [SerializeField] private float speed = 5f; // Moving speed of the player
+    [SerializeField] private float speed = 2.0f; // Moving speed of the player
     [SerializeField] private GameObject model;
     public uint Investigative = (uint)DataTransfer.investigation;
     public uint Interrogation = (uint)DataTransfer.interrogation;
@@ -36,6 +34,7 @@ public class Player : Character
     // Private member for the components
     private CharacterController controller;
     private Animator animator;
+    private bool isMoving;
     private Vector3 move;
 
     // Get the component of the player
@@ -56,8 +55,8 @@ public class Player : Character
     // Update is called once per frame
     void Update()
     {
-        controller.Move(move);
-
+        controller.SimpleMove(move);
+        PlayerRotation(move);
         // Find the nearby object
         numOfNearbyObject = Physics.OverlapSphereNonAlloc(transform.position, searchingDistance, nearbyObject, interactionLayerMask);
 
@@ -86,13 +85,21 @@ public class Player : Character
     }
 
     // Handle Rotation
-    void PlayerRotation()
+    void PlayerRotation(Vector3 target)
     {
-        Vector3 lookat = transform.position;
-        Quaternion currentRotation = transform.rotation;
-        Quaternion targetRotation = Quaternion.LookRotation(lookat);
+        Vector3 lookat;
+        lookat.x = target.x;
+        lookat.y = 0.0f;
+        lookat.z = target.z;
+        Quaternion currentRotation = model.transform.rotation;
 
-        Quaternion.Slerp(currentRotation, targetRotation, rotationFactor);
+        if(isMoving)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(lookat);
+            model.transform.rotation = Quaternion.Slerp(currentRotation,
+                targetRotation,
+                (20.0f * Time.deltaTime));
+        }
     }
 
     // Move the player
@@ -102,17 +109,38 @@ public class Player : Character
         Vector3 input = new Vector3(content.ReadValue<Vector2>().x, 0, content.ReadValue<Vector2>().y);
 
         // Move the player
-        move = input * speed * Time.deltaTime;
+        move = input * speed * 9.81f * Time.deltaTime;
 
         // Switch the animation
         if (move == Vector3.zero)
         {
             animator.SetBool("isWalking", false);
-            PlayerRotation();
+            isMoving = false;
         }
         else
         {
             animator.SetBool("isWalking", true);
+            isMoving = true;
         }
+    }
+
+    public override bool CheckStatus(Status status)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override bool CheckStatus(Status status, FavorableConditions conditions)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void AddStatus(Status status)
+    {
+        throw new NotImplementedException();
+    }
+
+    public override void RemoveStatus(Status status)
+    {
+        throw new NotImplementedException();
     }
 }

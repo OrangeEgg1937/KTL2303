@@ -6,12 +6,12 @@ using UnityEngine;
 public interface IFavorableConditionsProperty
 {
     // Checking the Conditions is exist in the object or not
-    public bool CheckStatus(Status status);
+    public bool CheckCondition(FavorableConditions conditions);
 
-    // Adding the status into the object
-    public void AddStatus(Status status);
+    // Adding the condition into the object
+    public void AddCondition(FavorableConditions conditions);
 
     // Remove the status into the object
-    public void RemoveStatus(Status status);
+    public void ReomveCondition(FavorableConditions conditions);
 
 }

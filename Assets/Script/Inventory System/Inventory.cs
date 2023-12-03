@@ -10,7 +10,6 @@ public class Inventory
     [Header("Inventory Attributes")]
     [SerializeField] private int capacity = 10; // The maximum number of items that can be stored in the inventory
     [SerializeField] private int currentSize = 0; // The current number of items in the inventory
-    [SerializeField] private TextAsset JSON_Data; // The initial of the inventory
 
     List<Item> items; // The list of items in the inventory
     
@@ -22,15 +21,7 @@ public class Inventory
     // Setup the inventory
     public void Setup()
     {
-        if (JSON_Data != null)
-        {
-            // import the data from JSON file from array to list
-            items = new List<Item> { JsonUtility.FromJson<Item>(JSON_Data.text) };
-        }
-        else
-        {
-            items = new List<Item>();
-        }
+
     }
 
     // Add an item to the inventory

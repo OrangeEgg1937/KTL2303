@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public abstract class Character : MonoBehaviour
+public abstract class Character : MonoBehaviour, IStatusProperty
 {
     // Character attributes
     [Header("Character Attributes")]
@@ -46,4 +46,8 @@ public abstract class Character : MonoBehaviour
         }
     }
 
+    public abstract bool CheckStatus(Status status);
+    public abstract bool CheckStatus(Status status, FavorableConditions conditions);
+    public abstract void AddStatus(Status status);
+    public abstract void RemoveStatus(Status status);
 }

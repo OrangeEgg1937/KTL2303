@@ -48,4 +48,24 @@ public class NPC : Character
     {
         print("Trigger Event: " + message);
     }
+
+    public override bool CheckStatus(Status status)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override bool CheckStatus(Status status, FavorableConditions conditions)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void AddStatus(Status status)
+    {
+        throw new System.NotImplementedException();
+    }
+
+    public override void RemoveStatus(Status status)
+    {
+        throw new System.NotImplementedException();
+    }
 }

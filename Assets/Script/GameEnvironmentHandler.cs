@@ -25,4 +25,6 @@ public class GameEnvironmentHandler : MonoBehaviour
         string currentDir = System.IO.Directory.GetCurrentDirectory();
         System.IO.File.WriteAllText((currentDir+"\\log.txt"), logger);
     }
+
+    // Check the status of two gameobject is 
 }

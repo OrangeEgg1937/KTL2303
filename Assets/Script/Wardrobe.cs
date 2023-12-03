@@ -2,14 +2,21 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Wardrobe : InteractableEnv
+public class Wardrobe : InteractableObject
 {
     [SerializeField] private Inventory inventory; // The inventory of the wardrobe
     [SerializeField] private GameObject Player;
     [SerializeField] private Item item;
 
+    private List<Status> statusList = new List<Status>();
+
     // Constructor
     Wardrobe() : base(false) { }
+
+    public override bool CheckStatus(Status status, FavorableConditions conditions)
+    {
+        throw new System.NotImplementedException();
+    }
 
     public override void Interact()
     {

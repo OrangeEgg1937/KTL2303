@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Playables;
 using UnityEngine;
 
 // Set a generic Unity event class
@@ -18,10 +20,17 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     protected List<FavorableConditions> conditions;
     protected bool isInvestigated = false;
 
+    private Player ability;
+
     // Constructor
     protected InteractableObject(bool upgardeable)
     {
         isUpgardeable = upgardeable;
+    }
+
+    protected virtual void Awake()
+    {
+        ability = (Player) FindObjectOfType(typeof(Player));
     }
 
     // Use method to interact with the object
@@ -39,7 +48,16 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
 
     }
 
-    // Set the 
+    //calculate the probability of showing the status
+    public float showStatusProbability(Status objStatus, List<FavorableConditions> condList)
+    {
+        List<FavorableConditions> statusCondList = objStatus.conditions;
+        int count = statusCondList.Intersect(condList).Count();
+        float probability = objStatus.bonusDiscoveryRate + objStatus.discoveryRate * count + (float)ability.Investigative / 100;
+        if (probability > 1)
+            probability = 1;
+        return probability;
+    }
 
     // Upgrading the object
     public abstract void Upgrade(GameObject source);

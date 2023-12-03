@@ -43,8 +43,9 @@ public class Wardrobe : InteractableObject
 
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         gameObject.layer = INTERACTABLE_OBJECT_LAYER_CODE;
     }
 

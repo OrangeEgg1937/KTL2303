@@ -8,15 +8,16 @@ public class NPC : Character
 {
     // The target location
     [SerializeField] Transform destination;
+    [SerializeField] InworldAIEventHandler eventHandler;
+    [SerializeField] GameObject ItemsList;
 
     // Private member of NPC
     private NavMeshAgent agent;     // NavMeshAgent for NPC movement
-    private Rigidbody rigidbody; // Rigidbody of the player
 
     // Get the component of the player
     private void Awake()
     {
-        rigidbody = GetComponent<Rigidbody>();
+        
     }
 
     // Start is called before the first frame update
@@ -47,6 +48,19 @@ public class NPC : Character
     public void OnGoalComplete(string message)
     {
         print("Trigger Event: " + message);
+
+        // Setup the murder
+        if (string.Compare(message, "murder_1") == 0)
+        {
+            eventHandler.isSetupEnd = true;
+            eventHandler.SetMurder(gameObject.name);
+        }
+
+        // Setup the weapon
+        if (string.Compare(message, "weapon_0") == 0)
+        {
+            // eventHandler.SetWeapon(0);
+        }
     }
 
     public override bool CheckStatus(Status status)

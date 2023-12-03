@@ -34,6 +34,7 @@ namespace Inworld.Sample
         {
             if (!IsUIReady)
                 return;
+            print("BRAIN NAME: " + charData.brainName);
             InsertBubble(charData.brainName, m_CharSelectorPrefab, charData.givenName);
             StartCoroutine((m_Bubbles[charData.brainName] as CharacterButton)?.SetData(charData));
         }

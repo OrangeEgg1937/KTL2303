@@ -28,6 +28,8 @@ namespace Inworld
         public event Action<InworldCharacterData> OnCharacterRegistered;
         public event Action<InworldCharacter, InworldCharacter> OnCharacterChanged;
 
+        [SerializeField] public GameObject handler;
+
         // YAN: Now LiveSessionID is handled by CharacterHandler Only. It'll always be updated. 
         //      Both Keys are BrainNames
         protected readonly Dictionary<string, string> m_LiveSession = new Dictionary<string, string>();
@@ -195,6 +197,7 @@ namespace Inworld
             foreach (InworldCharacterData agent in response.agents.Where(agent => !string.IsNullOrEmpty(agent.agentId) && !string.IsNullOrEmpty(agent.brainName)))
             {
                 m_LiveSession[agent.brainName] = agent.agentId;
+                handler.BroadcastMessage("receiveCharacter", agent);
                 m_Characters[agent.brainName] = agent;
                 StartCoroutine(UpdateThumbnail(agent));
                 OnCharacterRegistered?.Invoke(agent);

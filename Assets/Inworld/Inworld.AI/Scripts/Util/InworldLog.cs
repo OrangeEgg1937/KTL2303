@@ -52,8 +52,6 @@ namespace Inworld
         [Conditional("INWORLD_DEBUG")]
         static internal void Log(string msg)
         {
-            InworldCharacter currChar = InworldController.CurrentCharacter;
-            if (currChar != null) { print("GET THE CURR CHAR:" + currChar.BrainName); }
             Debug.Log(msg);
         }
 

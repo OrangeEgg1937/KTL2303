@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Knife
   m_EditorClassIdentifier: 
   id: 0
-  name: Knife
+  items_name: Knife
   description: Someone may use it to kill someone...
   icon: {fileID: 21300000, guid: b4a78b27cc4cd34469598393eefed957, type: 3}
   status: []

@@ -93,6 +93,7 @@ namespace Inworld.Sample
         
         IEnumerator FadeOut()
         {
+            m_HintText.text = m_MainText.text = "";
             while (m_BG.color.a > 0)
             {
                 Color color = m_BG.color;
@@ -100,7 +101,6 @@ namespace Inworld.Sample
                 m_BG.color = color;
                 yield return new WaitForFixedUpdate();
             }
-            m_HintText.text = m_MainText.text = "";
             gameObject.SetActive(false);
         }
         public void ExitApp()

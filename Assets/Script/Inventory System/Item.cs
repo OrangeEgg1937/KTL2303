@@ -10,7 +10,7 @@ public class Item : ScriptableObject
     // Item attributes
     [Header("Item Attributes")]
     [SerializeField] public int id; // The id of the item
-    [SerializeField] public string name;
+    [SerializeField] public string items_name;
     [SerializeField] public string description;
     [SerializeField] public Sprite icon;
 

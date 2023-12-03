@@ -14,7 +14,6 @@ public class ChatUIAppearance: MonoBehaviour
             print("NULL chatUI");
             return;
         }
-        print("Process to nect");
 
         Canvas location = chatUI.GetComponent<Canvas>();
 

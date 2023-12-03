@@ -8,12 +8,18 @@
 
 using Inworld.Entities;
 
-
-
 namespace Inworld.Sample
 {
     public class PlayerController2D : PlayerController
     {
+        public void InitialMurderEvent()
+        {
+            InworldCharacter currentSelected = InworldController.CurrentCharacter;
+            print(currentSelected.ID);
+            if (InworldController.CurrentCharacter)
+                InworldController.CurrentCharacter.SendText("You feel that now have a chance to take Alex life.");
+        }
+
         protected override void Start()
         {
             if (m_PushToTalk)
@@ -39,7 +45,7 @@ namespace Inworld.Sample
         
         protected virtual void OnCharacterRegistered(InworldCharacterData charData)
         {
-            print(charData.brainName);
+            
         }
     }
 }

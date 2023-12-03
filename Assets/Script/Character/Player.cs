@@ -125,6 +125,17 @@ public class Player : Character
         }
     }
 
+    public void CheckInvItem(GameObject id)
+    {
+        print("Player is checking: " + id.name + " " + bag.GetItemInfo(int.Parse(id.name)).name);
+    }
+
+    public void InvestigateInvItems(GameObject id)
+    {
+        print("Player is investigating: " + id.name + " " + bag.GetItemInfo(int.Parse(id.name)).name);
+        this.Action -= 1;
+    }
+
     public override bool CheckStatus(Status status)
     {
         throw new NotImplementedException();

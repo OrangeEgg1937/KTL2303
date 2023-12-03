@@ -1,5 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
+using UnityEditor.Playables;
 using UnityEngine;
 using System.Linq;
 
@@ -19,23 +21,21 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     [Header("Interactable field")]
     [SerializeField] protected List<Status> status;
     protected bool isInvestigated = false;
-    [SerializeField] private Player ability;
+
+    private Player ability;
+
     // Constructor
     protected InteractableObject(bool upgardeable)
     {
         isUpgardeable = upgardeable;
     }
 
-    //calculate the probability of showing the status
-    public float showStatusProbability(Status objStatus, List<FavorableConditions> condList)
+    protected virtual void Awake()
     {
-        List<FavorableConditions> statusCondList = objStatus.conditions;
-        int count = statusCondList.Intersect(condList).Count();
-        float probability = objStatus.bonusDiscoveryRate + objStatus.discoveryRate * count + (float)ability.Investigative/100;
-        if (probability > 1)
-            probability = 1;
-        return probability;
+        ability = (Player) FindObjectOfType(typeof(Player));
     }
+
+
     // Use method to interact with the object
     public virtual void Interact() // General interact method
     {
@@ -44,13 +44,23 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
             var player = FindObjectOfType<Player>();
             player.Action = player.Action - 1;
         }
+
     }
     public virtual void Interact(GameObject target) // Geheral interact method with object
     {
 
     }
 
-    // Set the 
+    //calculate the probability of showing the status
+    public float showStatusProbability(Status objStatus, List<FavorableConditions> condList)
+    {
+        List<FavorableConditions> statusCondList = objStatus.conditions;
+        int count = statusCondList.Intersect(condList).Count();
+        float probability = objStatus.bonusDiscoveryRate + objStatus.discoveryRate * count + (float)ability.Investigative / 100;
+        if (probability > 1)
+            probability = 1;
+        return probability;
+    }
 
     // Upgrading the object
     public abstract void Upgrade(GameObject source);

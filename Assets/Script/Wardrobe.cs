@@ -7,6 +7,7 @@ public class Wardrobe : InteractableObject
     [SerializeField] private Inventory inventory; // The inventory of the wardrobe
     [SerializeField] private GameObject Player;
     [SerializeField] private Item item;
+    [SerializeField] private Item items2;
 
     private List<Status> statusList = new List<Status>();
 
@@ -26,6 +27,10 @@ public class Wardrobe : InteractableObject
         {
             print("Added");
         }
+        if (action.bag.AddItem(items2))
+        {
+            print("Added Book");
+        }
     }
 
     public override void Interact(GameObject target)
@@ -38,8 +43,9 @@ public class Wardrobe : InteractableObject
 
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         gameObject.layer = INTERACTABLE_OBJECT_LAYER_CODE;
     }
 

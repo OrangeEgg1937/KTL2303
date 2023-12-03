@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 // The central system to listen the character and environment changing 
 public class GameEnvironmentHandler : MonoBehaviour
 {
+    [SerializeField] private TextMeshProUGUI m_EventMessageDisplayer;
     private string logger;
 
     // Write the message to the logger
@@ -26,5 +28,8 @@ public class GameEnvironmentHandler : MonoBehaviour
         System.IO.File.WriteAllText((currentDir+"\\log.txt"), logger);
     }
 
-    // Check the status of two gameobject is 
+    public void WriteEventMessage(string message)
+    {
+        m_EventMessageDisplayer.text = "Game event: " + message;
+    }
 }

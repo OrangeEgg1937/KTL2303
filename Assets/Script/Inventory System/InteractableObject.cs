@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 // Set a generic Unity event class
 
@@ -11,19 +12,30 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     // Interactable object attributes
     // We don't need the name of the object
     // because we can get it by using gameObject.name from MonoBehaviour
+    
     public const int INTERACTABLE_OBJECT_LAYER_CODE = 6;
 
     protected bool isUpgardeable; // Can the object be upgraded
-    protected List<Status> status;
-    protected List<FavorableConditions> conditions;
+    [Header("Interactable field")]
+    [SerializeField] protected List<Status> status;
     protected bool isInvestigated = false;
-
+    [SerializeField] private Player ability;
     // Constructor
     protected InteractableObject(bool upgardeable)
     {
         isUpgardeable = upgardeable;
     }
 
+    //calculate the probability of showing the status
+    public float showStatusProbability(Status objStatus, List<FavorableConditions> condList)
+    {
+        List<FavorableConditions> statusCondList = objStatus.conditions;
+        int count = statusCondList.Intersect(condList).Count();
+        float probability = objStatus.bonusDiscoveryRate + objStatus.discoveryRate * count + (float)ability.Investigative/100;
+        if (probability > 1)
+            probability = 1;
+        return probability;
+    }
     // Use method to interact with the object
     public virtual void Interact() // General interact method
     {

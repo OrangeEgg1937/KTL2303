@@ -20,6 +20,7 @@ public class Wardrobe : InteractableObject
 
     public override void Interact()
     {
+        base.Interact();
         Player action = Player.GetComponent<Player>();
         if (action.bag.AddItem(item))
         {

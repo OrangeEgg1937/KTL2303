@@ -43,6 +43,7 @@ public class Player : Character
         // Assign the component
         controller = GetComponent<CharacterController>();
         animator = model.GetComponent<Animator>();
+        this.bag.Setup();
     }
 
     // Start is called before the first frame update

@@ -13,9 +13,10 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     // because we can get it by using gameObject.name from MonoBehaviour
     public const int INTERACTABLE_OBJECT_LAYER_CODE = 6;
 
-    private bool isUpgardeable; // Can the object be upgraded
-    private List<Status> status;
-    private List<FavorableConditions> conditions;
+    protected bool isUpgardeable; // Can the object be upgraded
+    protected List<Status> status;
+    protected List<FavorableConditions> conditions;
+    protected bool isInvestigated = false;
 
     // Constructor
     protected InteractableObject(bool upgardeable)
@@ -26,7 +27,11 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     // Use method to interact with the object
     public virtual void Interact() // General interact method
     {
-
+        if (!isInvestigated)
+        {
+            var player = FindObjectOfType<Player>();
+            player.Action = player.Action - 1;
+        }
     }
     public virtual void Interact(GameObject target) // Geheral interact method with object
     {

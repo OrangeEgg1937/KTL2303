@@ -21,7 +21,7 @@ public class Inventory
     // Setup the inventory
     public void Setup()
     {
-
+        items = new List<Item>();
     }
 
     // Add an item to the inventory
@@ -29,6 +29,10 @@ public class Inventory
     {
         if (currentSize < capacity)
         {
+            if(item == null) 
+            {
+                return false; 
+            }
             items.Add(item);
             currentSize++;
             return true;

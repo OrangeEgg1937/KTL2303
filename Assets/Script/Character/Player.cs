@@ -20,6 +20,7 @@ public class Player : Character
     [Header("Player Attributes")]
     [SerializeField] private float speed = 2.0f; // Moving speed of the player
     [SerializeField] private GameObject model;
+    [SerializeField] public List<FavorableConditions> Cules;
     public uint Investigative = (uint)DataTransfer.investigation;
     public uint Interrogation = (uint)DataTransfer.interrogation;
     public uint Action = (uint)DataTransfer.action;
@@ -28,6 +29,12 @@ public class Player : Character
     // Player interactive handler
     [Header("Player Action Handler")]
     [SerializeField] PlayerEvent playerAction = new PlayerEvent();
+
+    // Player Display UI related
+    [SerializeField] GameObject PlayerItemsUI;
+
+    [SerializeField] public bool isBusy;
+
     // Constructor
     Player() : base(99999U) { }
 
@@ -37,6 +44,8 @@ public class Player : Character
     private bool isMoving;
     private Vector3 move;
 
+    public void SetIsBusy(bool input) { isBusy = input; }
+
     // Get the component of the player
     private void Awake()
     {
@@ -44,6 +53,7 @@ public class Player : Character
         controller = GetComponent<CharacterController>();
         animator = model.GetComponent<Animator>();
         this.bag.Setup();
+        Cules = new List<FavorableConditions>();
     }
 
     // Start is called before the first frame update
@@ -113,9 +123,10 @@ public class Player : Character
         move = input * speed * 9.81f * Time.deltaTime;
 
         // Switch the animation
-        if (move == Vector3.zero)
+        if (move == Vector3.zero || isBusy)
         {
             animator.SetBool("isWalking", false);
+            move = Vector3.zero;
             isMoving = false;
         }
         else
@@ -128,11 +139,13 @@ public class Player : Character
     public void CheckInvItem(GameObject id)
     {
         print("Player is checking: " + id.name + " " + bag.GetItemInfo(int.Parse(id.name)).name);
+        PlayerItemsUI.SendMessage("DisplayStatusDetail", bag.GetItemInfo(int.Parse(id.name)), SendMessageOptions.DontRequireReceiver);
     }
 
     public void InvestigateInvItems(GameObject id)
     {
         print("Player is investigating: " + id.name + " " + bag.GetItemInfo(int.Parse(id.name)).name);
+        PlayerItemsUI.SendMessage("DisplayStatusDetail", bag.GetItemInfo(int.Parse(id.name)), SendMessageOptions.DontRequireReceiver);
         this.Action -= 1;
     }
 

@@ -5,15 +5,10 @@ using UnityEngine;
 
 public class Table : InteractableObject
 {
-    [Header("Table field")]
+/*    [Header("Table field")]
     [SerializeField] private Inventory inventory; // The inventory of the wardrobe
-    //[SerializeField] private GameObject Player;
-    //[SerializeField] private Item item;
-
     [SerializeField] private List<FavorableConditions> playerCondList;// This should be in Player.cs, delete it when finished
-
-    // Constructor
-    Table() : base(false) { }
+*/
 
     public override bool CheckStatus(Status status, FavorableConditions conditions)
     {
@@ -28,9 +23,9 @@ public class Table : InteractableObject
         {
             if (item != null)
             {
-                if (Random.value < showStatusProbability(item, playerCondList))//replace CondList with real conditional list of player!
+/*                if (Random.value < showStatusProbability(item, playerCondList))//replace CondList with real conditional list of player!
                     item.isHiddenAtStart = false;
-
+*/
             }
             
         }
@@ -46,8 +41,9 @@ public class Table : InteractableObject
 
     }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         gameObject.layer = INTERACTABLE_OBJECT_LAYER_CODE;
     }
 

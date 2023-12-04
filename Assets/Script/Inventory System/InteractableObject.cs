@@ -1,9 +1,6 @@
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEditor.Playables;
 using UnityEngine;
-using System.Linq;
 
 // Set a generic Unity event class
 
@@ -20,19 +17,15 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     protected bool isUpgardeable; // Can the object be upgraded
     [Header("Interactable field")]
     [SerializeField] protected List<Status> status;
-    protected bool isInvestigated = false;
+    [SerializeField] protected bool isInvestigated = false;
+    [SerializeField] protected Inventory inventory;
+    [SerializeField] protected Player player;
 
-    private Player ability;
-
-    // Constructor
-    protected InteractableObject(bool upgardeable)
-    {
-        isUpgardeable = upgardeable;
-    }
 
     protected virtual void Awake()
     {
-        ability = (Player) FindObjectOfType(typeof(Player));
+        player = (Player) FindObjectOfType(typeof(Player));
+        inventory = new Inventory();
     }
 
 
@@ -41,7 +34,6 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     {
         if (!isInvestigated)
         {
-            var player = FindObjectOfType<Player>();
             player.Action = player.Action - 1;
         }
 
@@ -56,7 +48,7 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     {
         List<FavorableConditions> statusCondList = objStatus.conditions;
         int count = statusCondList.Intersect(condList).Count();
-        float probability = objStatus.bonusDiscoveryRate + objStatus.discoveryRate * count + (float)ability.Investigative / 100;
+        float probability = objStatus.bonusDiscoveryRate + objStatus.discoveryRate * count + (float)player.Investigative / 100;
         if (probability > 1)
             probability = 1;
         return probability;
@@ -92,16 +84,16 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
 
     public virtual bool CheckCondition(FavorableConditions conditions)
     {
-        throw new System.NotImplementedException();
+        return true;
     }
 
     public virtual void AddCondition(FavorableConditions conditions)
     {
-        throw new System.NotImplementedException();
+        
     }
 
     public virtual void ReomveCondition(FavorableConditions conditions)
     {
-        throw new System.NotImplementedException();
+        
     }
 }

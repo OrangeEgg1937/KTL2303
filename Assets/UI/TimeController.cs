@@ -10,6 +10,9 @@ public class TimeController : MonoBehaviour
     public bool startCountdown = false;
 
     private TextMeshProUGUI displayTime;
+    [SerializeField] private GameEndProcess gameEndProcess;
+
+
 
     // Start is called before the first frame update
     void Start()
@@ -25,6 +28,8 @@ public class TimeController : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             UpdateTIme(timeLeft);
+        }else if(timeLeft <= 0){
+            gameEndProcess.gameEnd(1);
         }
     }
 

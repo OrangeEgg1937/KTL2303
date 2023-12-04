@@ -14,7 +14,10 @@ public class Status : ScriptableObject
     public string statusDescription;
     [SerializeField]
     [Tooltip("The status is hidden or not by default")]
-    public bool isHiddenAtStart; 
+    public bool isHiddenAtStart;
+    [SerializeField]
+    [Tooltip("The status is discover by player or not")]
+    public bool isDiscover = false;
 
     [Header("Favorite Conditions")]
     [Tooltip("What conditions are favorable for this status?")]

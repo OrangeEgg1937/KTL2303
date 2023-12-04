@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-// Define a NPC Class
 public class NPC : Character
 {
     // The target location
@@ -13,11 +12,12 @@ public class NPC : Character
 
     // Private member of NPC
     private NavMeshAgent agent;     // NavMeshAgent for NPC movement
+    private LevelBuilder levelbuilder;
 
     // Get the component of the player
     private void Awake()
     {
-        
+        levelbuilder = (LevelBuilder) FindAnyObjectByType(typeof(LevelBuilder));
     }
 
     // Start is called before the first frame update
@@ -59,7 +59,24 @@ public class NPC : Character
         // Setup the weapon
         if (string.Compare(message, "weapon_0") == 0)
         {
-            // eventHandler.SetWeapon(0);
+            print(gameObject.name + "Weapon 0 selected");
+            eventHandler.SetWeapon(levelbuilder.GetItemById(0));
+        }
+
+        // Set the weapon
+        if (string.Compare(message, "weapon_1") == 0)
+        {
+            print(gameObject.name + "Weapon 0 selected");
+            int weapon_code = 0;
+            switch (gameObject.name)
+            {
+                case "ben": weapon_code = 2; break;
+                case "david": weapon_code = 3; break;
+                case "jack": weapon_code = 4; break;
+                default: break;
+            }
+            eventHandler.SetWeapon(levelbuilder.GetItemById(weapon_code));
+            levelbuilder.AddStatisToItemInItemList(levelbuilder.GetStatusById(0), weapon_code);
         }
     }
 

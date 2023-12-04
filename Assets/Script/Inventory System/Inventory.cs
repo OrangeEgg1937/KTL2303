@@ -9,9 +9,8 @@ public class Inventory
     // Inventory attributes
     [Header("Inventory Attributes")]
     [SerializeField] private int capacity = 10; // The maximum number of items that can be stored in the inventory
-    [SerializeField] private int currentSize = 0; // The current number of items in the inventory
-
-    List<Item> items; // The list of items in the inventory
+    [SerializeField] private int currentSize = 0; // The current number of items in the 
+    [SerializeField] public List<Item> items; // The list of items in the inventory
     
     public int CurrentSize()
     {

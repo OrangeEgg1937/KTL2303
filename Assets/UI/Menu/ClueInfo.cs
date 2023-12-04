@@ -4,6 +4,15 @@ using UnityEngine;
 
 public class ClueInfo : MonoBehaviour
 {
+    [SerializeField] GameObject clueDisplay;
+
+    DisplayClue disaply;
+
+    private void Awake()
+    {
+        disaply = clueDisplay.GetComponent<DisplayClue>();
+    }
+
     public void DisplayInfo(int id)
     {
         print("Message received: " + id);
@@ -14,5 +23,6 @@ public class ClueInfo : MonoBehaviour
         }
 
         gameObject.SetActive(true);
+        disaply.DisplayPlayerClues();
     }
 }

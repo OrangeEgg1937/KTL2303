@@ -13,11 +13,15 @@ public class Item : ScriptableObject
     [SerializeField] public string items_name;
     [SerializeField] public string description;
     [SerializeField] public Sprite icon;
+    [SerializeField] public bool isDiscoveredByPlayer = false;
 
     [Header("Status")]
     [SerializeField] public List<Status> status;
 
     [Header("Condition")]
     [SerializeField] public List<FavorableConditions> Condition;
-    
+
+    [Header("Initial Status")]
+    [SerializeField] public List<Status> initStatus;
+
 }

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statusName: human_blood
   statusDescription: the object available to give some damage to other
-  isHiddenAtStart: 0
+  isHiddenAtStart: 1
   conditions:
   - {fileID: 11400000, guid: 6b20f99153e47d84d8ff1eca871194ad, type: 2}
   discoveryRate: 0.1

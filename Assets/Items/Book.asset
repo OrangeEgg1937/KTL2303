@@ -16,5 +16,6 @@ MonoBehaviour:
   items_name: Book
   description: Someone will read it
   icon: {fileID: 21300000, guid: 8edfccd042f27654aad335bf0f2618b7, type: 3}
+  isDiscoveredByPlayer: 0
   status: []
   Condition: []

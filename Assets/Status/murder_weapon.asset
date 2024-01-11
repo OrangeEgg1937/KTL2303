@@ -15,6 +15,8 @@ MonoBehaviour:
   statusName: Murder weapon
   statusDescription: It is definitely the murder weapon
   isHiddenAtStart: 1
-  conditions: []
-  discoveryRate: 0
-  bonusDiscoveryRate: 0.8
+  isDiscover: 0
+  conditions:
+  - {fileID: 11400000, guid: aaefb1cc96cd8b74f8b4594370def737, type: 2}
+  discoveryRate: 0.1
+  bonusDiscoveryRate: 0.9

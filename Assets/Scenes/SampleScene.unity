@@ -1664,6 +1664,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 262828393}
+        m_TargetAssemblyTypeName: InworldAIEventHandler, Assembly-CSharp
+        m_MethodName: SetWeaponLocation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 208073170}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: AddWeaponCluesIntoList
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRelationUpdated:
     m_PersistentCalls:
       m_Calls: []
@@ -3436,14 +3460,14 @@ MonoBehaviour:
   Cules: []
   Investigative: 38
   Interrogation: 24
-  Action: 34
+  Action: 10
   bio: This is player bio
   playerAction:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 2136440451}
         m_TargetAssemblyTypeName: GameEnvironmentHandler, Assembly-CSharp
-        m_MethodName: WriteLog
+        m_MethodName: WriteEventMessage
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3455,6 +3479,9 @@ MonoBehaviour:
         m_CallState: 1
   PlayerItemsUI: {fileID: 734668452}
   isBusy: 0
+  bloodDetector: {fileID: 11400000, guid: 1b4c0a6a56922d04da7caa69ff1eef40, type: 2}
+  read_blood: {fileID: 11400000, guid: 6b20f99153e47d84d8ff1eca871194ad, type: 2}
+  clues2: {fileID: 11400000, guid: aaefb1cc96cd8b74f8b4594370def737, type: 2}
 --- !u!143 &208073171
 CharacterController:
   m_ObjectHideFlags: 0
@@ -7977,9 +8004,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40d5b681091b0fb4cb27643981568937, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handler: {fileID: 0}
-  weapon: {fileID: 0}
-  murder: {fileID: 0}
+  handler: {fileID: 262828393}
+  weapon: {fileID: 55894039}
+  murder: {fileID: 355930086}
 --- !u!114 &497098474
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15486,13 +15513,15 @@ MonoBehaviour:
     status: []
     cules:
     - {fileID: 11400000, guid: abf7fe382e129a8459060dc24c573449, type: 2}
-    items: []
+    items:
+    - {fileID: 11400000, guid: 1b4c0a6a56922d04da7caa69ff1eef40, type: 2}
   ItemsList:
   - {fileID: 11400000, guid: c62ef19a40c516949b3628f69b65f6b6, type: 2}
   - {fileID: 11400000, guid: 395d7bd9aaf88de46a12990a8b253440, type: 2}
   - {fileID: 11400000, guid: c3777936f4c91414b8d7dae5da3947c9, type: 2}
   - {fileID: 11400000, guid: fe16b1a5dfa420a45bfcd9593e22cc91, type: 2}
   - {fileID: 11400000, guid: 96f2b39bef80e9f4a9daf5b67b76daa3, type: 2}
+  - {fileID: 11400000, guid: 1b4c0a6a56922d04da7caa69ff1eef40, type: 2}
   StatusList:
   - {fileID: 11400000, guid: 6cbe5f8d4f9f9314d94848941563255a, type: 2}
   - {fileID: 11400000, guid: d709c74611f600440aa4e2273e89ad30, type: 2}
@@ -15507,6 +15536,8 @@ MonoBehaviour:
   - {fileID: 145316933}
   CondList:
   - {fileID: 11400000, guid: 6b20f99153e47d84d8ff1eca871194ad, type: 2}
+  clues1: {fileID: 11400000, guid: 8c2bc16f987b71048b5cc44ffcda61da, type: 2}
+  clues2: {fileID: 11400000, guid: aaefb1cc96cd8b74f8b4594370def737, type: 2}
 --- !u!4 &1119369144
 Transform:
   m_ObjectHideFlags: 0
@@ -16503,6 +16534,30 @@ MonoBehaviour:
       - m_Target: {fileID: 1200737857}
         m_TargetAssemblyTypeName: NPC, Assembly-CSharp
         m_MethodName: OnGoalComplete
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 262828393}
+        m_TargetAssemblyTypeName: InworldAIEventHandler, Assembly-CSharp
+        m_MethodName: SetWeaponLocation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 208073170}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: AddWeaponCluesIntoList
         m_Mode: 0
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -19484,7 +19539,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1452351967
 RectTransform:
   m_ObjectHideFlags: 0
@@ -22521,7 +22576,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1676860330
 RectTransform:
   m_ObjectHideFlags: 0
@@ -27793,6 +27848,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 262828393}
+        m_TargetAssemblyTypeName: InworldAIEventHandler, Assembly-CSharp
+        m_MethodName: SetWeaponLocation
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 208073170}
+        m_TargetAssemblyTypeName: Player, Assembly-CSharp
+        m_MethodName: AddWeaponCluesIntoList
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onRelationUpdated:
     m_PersistentCalls:
       m_Calls: []
@@ -28526,8 +28605,9 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
   item: {fileID: 11400000, guid: fe16b1a5dfa420a45bfcd9593e22cc91, type: 2}
-  items2: {fileID: 11400000, guid: c3777936f4c91414b8d7dae5da3947c9, type: 2}
+  items2: {fileID: 11400000, guid: 1b4c0a6a56922d04da7caa69ff1eef40, type: 2}
 --- !u!1001 &2340438576126480936
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28682,6 +28762,7 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
 --- !u!1001 &3476324187971685100
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -28997,6 +29078,7 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
 --- !u!1001 &4136695418836069244
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29194,6 +29276,7 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
 --- !u!1001 &5008429948601100749
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29538,6 +29621,7 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
 --- !u!1001 &5938250586339689096
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29634,6 +29718,7 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
 --- !u!1001 &6282656840430609355
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29726,6 +29811,7 @@ MonoBehaviour:
     currentSize: 0
     items: []
   player: {fileID: 0}
+  vol: []
 --- !u!1001 &7361321655963595891
 PrefabInstance:
   m_ObjectHideFlags: 0

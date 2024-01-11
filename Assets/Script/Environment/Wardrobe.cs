@@ -7,6 +7,8 @@ public class Wardrobe : InteractableObject
     [SerializeField] private Item item;
     [SerializeField] private Item items2;
 
+    private bool isTaken = false;
+
     private List<Status> statusList = new List<Status>();
 
 
@@ -18,13 +20,9 @@ public class Wardrobe : InteractableObject
     public override void Interact()
     {
         base.Interact();
-        if (player.bag.AddItem(item))
+        if (player.bag.AddItem(items2) && !isTaken)
         {
-            print("Added");
-        }
-        if (player.bag.AddItem(items2))
-        {
-            print("Added Book");
+            print("Added Blood detecter");
         }
     }
 

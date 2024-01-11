@@ -21,6 +21,8 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
     [SerializeField] protected Inventory inventory;
     [SerializeField] protected Player player;
 
+    [SerializeField] public List<Item> vol;
+
 
     protected virtual void Awake()
     {
@@ -28,6 +30,11 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
         inventory = new Inventory();
     }
 
+    // Method to add item
+    public virtual void AddItem(Item item)
+    {
+        inventory.AddItem(item);
+    }
 
     // Use method to interact with the object
     public virtual void Interact() // General interact method
@@ -36,6 +43,21 @@ public abstract class InteractableObject : MonoBehaviour, IStatusProperty, IFavo
         {
             player.Action = player.Action - 1;
         }
+
+        /*// Take items from inventory
+        Item item = inventory.TakeItem(0);
+
+        if (item == null) { return; }
+
+        player.bag.AddItem(item);*/
+
+        if (vol.Count >= 0 && player.Cules.Contains(player.clues2))
+        {
+            player.bag.AddItem(vol[0]);
+            vol.RemoveAt(0);
+        }
+
+        isInvestigated = true;
 
     }
     public virtual void Interact(GameObject target) // Geheral interact method with object

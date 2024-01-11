@@ -28,6 +28,24 @@ public class LevelBuilder : MonoBehaviour
     [Header("Conditional List")]
     [SerializeField] protected List<FavorableConditions> CondList;
 
+    [SerializeField] public FavorableConditions clues1;
+    [SerializeField] public FavorableConditions clues2;
+
+    public void GiveCluesToPlayer(String input)
+    {
+        Player dest = PlayerObject.gameObject.GetComponent<Player>();
+
+        if (input == "Clues_murder")
+        {
+            dest.Cules.Add(clues1);
+        }
+
+        if (input == "Clues_weapon")
+        {
+            dest.Cules.Add(clues2);
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -47,6 +65,9 @@ public class LevelBuilder : MonoBehaviour
 
             // init the list with initStatus
             item.status = new List<Status>(item.initStatus);
+
+            // reset the discovry status
+            item.isDiscoveredByPlayer = false;
         }
     }
 
@@ -67,12 +88,15 @@ public class LevelBuilder : MonoBehaviour
             dest.Cules.Add(item);
         }
 
-        // Initial items to player
-        foreach(var item in PlayerObject.items)
-        {
-            if (item == null) continue;
-            dest.bag.AddItem(item);
-        }
+    }
+
+    public void PlaceItemsById(Item item, int p_id)
+    {
+        if (item == null) return;
+
+        InteractableObject envObjcet = EnvList[p_id].GetComponent<InteractableObject>();
+
+        envObjcet.vol.Add(item);
     }
 
     public Item GetItemById(int id)

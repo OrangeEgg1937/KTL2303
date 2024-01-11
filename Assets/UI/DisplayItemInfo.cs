@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -30,12 +28,12 @@ public class DisplayItemInfo : MonoBehaviour
 
         stored_item = item;
         
-        // Modify the interactable of button
+/*        // Modify the interactable of button
         InvestigateBtn.interactable = true;
-        if (isInvestigated)
+        if (item.isDiscoveredByPlayer)
         {
             CheckBtn.interactable = true;
-        }else CheckBtn.interactable = false;
+        }else CheckBtn.interactable = false;*/
 
         inv_id = i;
     }
@@ -51,5 +49,13 @@ public class DisplayItemInfo : MonoBehaviour
         title.text = stored_item.name;
         DisplayImage.sprite = stored_item.icon;
         Description.text = stored_item.description;
+
+        // Modify the interactable of button
+        InvestigateBtn.interactable = true;
+        if (stored_item.isDiscoveredByPlayer)
+        {
+            CheckBtn.interactable = true;
+        }
+        else CheckBtn.interactable = false;
     }
 }

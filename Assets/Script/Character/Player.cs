@@ -1,11 +1,9 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
-using UnityEngine.InputSystem.XR;
-using static UnityEngine.GraphicsBuffer;
 
 [System.Serializable]
 
@@ -34,6 +32,10 @@ public class Player : Character
     [SerializeField] GameObject PlayerItemsUI;
 
     [SerializeField] public bool isBusy;
+
+    [SerializeField] public Item bloodDetector;
+    [SerializeField] public FavorableConditions read_blood;
+    [SerializeField] public FavorableConditions clues2;
 
     // Constructor
     Player() : base(99999U) { }
@@ -142,10 +144,49 @@ public class Player : Character
         PlayerItemsUI.SendMessage("DisplayStatusDetail", bag.GetItemInfo(int.Parse(id.name)), SendMessageOptions.DontRequireReceiver);
     }
 
+    public void AddWeaponCluesIntoList(String message)
+    {
+        if(message == "Clues_weapon")
+        {
+            print("Clues weapon Added!");
+            Cules.Add(clues2);
+        }
+    }
+
     public void InvestigateInvItems(GameObject id)
     {
         print("Player is investigating: " + id.name + " " + bag.GetItemInfo(int.Parse(id.name)).name);
+
+        Item temp_item = bag.GetItemInfo(int.Parse(id.name));
+
+        // Determin the successful rate
+        foreach (var item in temp_item.status)
+        {
+            // it is hidden status, check the match
+            if (item == null) break;
+            if (item.isHiddenAtStart)
+            {
+                List<FavorableConditions> statusCondList = item.conditions;
+                int count = statusCondList.Intersect(Cules).Count();
+                float probability = item.bonusDiscoveryRate + item.discoveryRate * count + (float) Investigative / 100;
+                if (probability > 1) 
+                { 
+                    playerAction.Invoke("You discover somethings!"); 
+                    item.isDiscover = true;
+                }
+                else
+                {
+                    playerAction.Invoke("You feel somethings, try to find more clues first!");
+                }
+            }
+        }
+        
         PlayerItemsUI.SendMessage("DisplayStatusDetail", bag.GetItemInfo(int.Parse(id.name)), SendMessageOptions.DontRequireReceiver);
+        if (bag.GetItemInfo(int.Parse(id.name)) == bloodDetector && !bloodDetector.isDiscoveredByPlayer)
+        {
+            Cules.Add(read_blood);
+        }
+        bag.GetItemInfo(int.Parse(id.name)).isDiscoveredByPlayer = true;
         this.Action -= 1;
     }
 

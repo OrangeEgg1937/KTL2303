@@ -39,7 +39,7 @@ public class InworldAIEventHandler : MonoBehaviour
             case 0:
                 initial_Windows_tips.text = "You WIN! The murder is: " + m_murder; break;
             case 1:
-                initial_Windows_tips.text = "You WIN! The murder is: " + m_murder; break;
+                initial_Windows_tips.text = "You Lost! The murder is: " + m_murder; break;
         }
     }
 
@@ -52,6 +52,7 @@ public class InworldAIEventHandler : MonoBehaviour
             Item selectedItem = Builder.FindItemByName(items);
             if (selectedItem != null)
             {
+                print(selectedItem.name);
                 if (selectedItem == m_weapon)
                 {
                     return true;
@@ -88,6 +89,21 @@ public class InworldAIEventHandler : MonoBehaviour
     public void SetWeapon(Item weapon)
     {
         m_weapon = weapon;
+    }
+
+    public void SetWeaponLocation(string location)
+    {
+        switch (location)
+        {
+            case "Wardrobe":Builder.PlaceItemsById(m_weapon,0); break;
+            case "Blue Vase": Builder.PlaceItemsById(m_weapon, 1); break;
+            case "Pink Vase": Builder.PlaceItemsById(m_weapon, 2); break;
+            case "Rectangle Table": Builder.PlaceItemsById(m_weapon, 3); break;
+            case "Lamp": Builder.PlaceItemsById(m_weapon, 4); break;
+            case "Twin Wardrobe": Builder.PlaceItemsById(m_weapon, 5); break;
+            case "Couch": Builder.PlaceItemsById(m_weapon, 6); break;
+            default: print("Not a location:" + location);break;
+        }
     }
 
     public void receiveCharacter(InworldCharacterData agent)

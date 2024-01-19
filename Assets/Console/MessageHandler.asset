@@ -1,0 +1,23 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f5a3b996d4296d84583b220071064596, type: 3}
+  m_Name: MessageHandler
+  m_EditorClassIdentifier: 
+  types:
+  - Name: Normal
+    StylePrefab: {fileID: 8139499089980978589, guid: da60a5344e83d4648bbbcf360c87b147, type: 3}
+  - Name: Warning
+    StylePrefab: {fileID: 6414648203640864680, guid: 31e4e333e1740804d85efd4ff6f990d9, type: 3}
+  - Name: Error
+    StylePrefab: {fileID: 9000028298787983517, guid: 5fc13c310c3fa1647aae0366fbb6d694, type: 3}
+  - Name: Finished
+    StylePrefab: {fileID: 3020741249300029971, guid: c5a42487c2b603141afd7e0bcc555a71, type: 3}

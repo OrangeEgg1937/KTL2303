@@ -13,6 +13,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "ConsoleCall",
+                    "type": "Button",
+                    "id": "02e8ba7f-6e62-4279-a998-037ba052e21d",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -114,6 +123,17 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "fea8a333-a31e-4d84-94ba-8bb2893950cb",
+                    "path": "<Keyboard>/backquote",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "Keyboard&Mouse",
+                    "action": "ConsoleCall",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         }

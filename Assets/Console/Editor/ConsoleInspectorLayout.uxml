@@ -1,0 +1,12 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" editor-extension-mode="True">
+    <Style src="project://database/Assets/Console/Editor/InspectorUss.uss?fileID=7433441132597879392&amp;guid=17af4ecc1e7759d438dc43f8764fa94a&amp;type=3#InspectorUss" />
+    <ui:Label tabindex="-1" text="Inspector customize not yet finished&#10;By Danny" display-tooltip-when-elided="true" name="Inprocess" focusable="false" class="Warning" style="height: auto; -unity-text-align: upper-left; white-space: normal; width: auto; flex-wrap: wrap; flex-direction: column;" />
+    <ui:Label tabindex="-1" text="Console Log Window" display-tooltip-when-elided="true" name="main" class="h1" />
+    <uie:ObjectField label="Log Window" binding-path="m_console" name="ObjectField" />
+    <ui:Label tabindex="-1" text="Message Style" display-tooltip-when-elided="true" name="MessageStyle" class="h1" />
+    <uie:ObjectField label="Message Handler" binding-path="m_MsgHandler" name="ObjectField" allow-scene-objects="true" type="InGameCustomConsole.Message.MessageHandler, Assembly-CSharp" />
+    <ui:Label tabindex="-1" text="Console input" display-tooltip-when-elided="true" name="Header" focusable="false" class="h1" />
+    <ui:EnumField label="Display Position" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" binding-path="m_displayPosition" name="DisplayPosition" tooltip="Determine the display of the console input" />
+    <ui:EnumField label="Display Scale" type="UnityEngine.TextAlignment, UnityEngine.TextRenderingModule" value="Center" binding-path="m_displayScaleMode" name="DisplayScale" tooltip="Determine the display size mode" />
+    <ui:Foldout text="Scale" value="false" tabindex="2" name="Scale" style="display: flex; visibility: visible; overflow: visible;" />
+</ui:UXML>

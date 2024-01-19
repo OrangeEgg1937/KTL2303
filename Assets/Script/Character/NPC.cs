@@ -7,7 +7,7 @@ public class NPC : Character
 {
     // The target location
     [SerializeField] Transform destination;
-    [SerializeField] InworldAIEventHandler eventHandler;
+    // [SerializeField] InworldAIEventHandler eventHandler;
     [SerializeField] GameObject ItemsList;
 
     // Private member of NPC
@@ -45,7 +45,7 @@ public class NPC : Character
     }
 
     // When trigger is activated, generate potion
-    public void OnGoalComplete(string message)
+/*    public void OnGoalComplete(string message)
     {
         print("Trigger Event: " + message);
 
@@ -78,7 +78,7 @@ public class NPC : Character
             eventHandler.SetWeapon(levelbuilder.GetItemById(weapon_code));
             levelbuilder.AddStatisToItemInItemList(levelbuilder.GetStatusById(0), weapon_code);
         }
-    }
+    }*/
 
     public override bool CheckStatus(Status status)
     {

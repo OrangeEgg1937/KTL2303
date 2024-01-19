@@ -6,18 +6,18 @@ using UnityEngine.UI;
 
 public class GameEndProcess : MonoBehaviour
 {
-    [SerializeField] InworldAIEventHandler handler;
+    // [SerializeField] InworldAIEventHandler handler;
     [SerializeField] TMPro.TMP_Dropdown weapon;
     [SerializeField] TMPro.TMP_Dropdown murder;
 
     public void gameEnd()
     {
         //get the selected index
-        bool isPlayerWin = handler.CheckWinCondition(
+/*        bool isPlayerWin = handler.CheckWinCondition(
             weapon.options[weapon.value].text,
-            murder.options[murder.value].text);
+            murder.options[murder.value].text);*/
 
-        if (isPlayerWin)
+/*        if (isPlayerWin)
         {
             handler.DisplayEndGameInfo(0);
         }
@@ -25,7 +25,7 @@ public class GameEndProcess : MonoBehaviour
         {
             gameEnd(2);
         }
-        handler.DisplayEndGameInfo(1);
+        handler.DisplayEndGameInfo(1);*/
     }
 
     public void gameEnd(int code)
@@ -42,7 +42,7 @@ public class GameEndProcess : MonoBehaviour
             print("Game ended with wrong answer!");
         }
 
-        handler.DisplayEndGameInfo(1);
+        // handler.DisplayEndGameInfo(1);
     }
     
 }

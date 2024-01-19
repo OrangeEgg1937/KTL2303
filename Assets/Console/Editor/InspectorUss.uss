@@ -1,0 +1,14 @@
+.h1 {
+    -unity-font-style: bold;
+    align-items: stretch;
+}
+
+.Warning {
+    color: rgb(255, 0, 0);
+    font-size: 20px;
+    -unity-font-style: bold;
+    -unity-text-outline-width: 1px;
+    -unity-slice-left: 0;
+    -unity-background-image-tint-color: rgb(255, 225, 0);
+    background-image: url('project://database/Assets/UI/background.png?fileID=2800000&guid=1493e8bb164469749b713300b0c4c9e7&type=3#background');
+}

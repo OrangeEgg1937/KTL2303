@@ -17,6 +17,6 @@ public class ActionValueDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        currentText.SetText(player.Action.ToString());
+        // currentText.SetText(player.Action.ToString());
     }
 }

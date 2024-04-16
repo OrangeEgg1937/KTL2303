@@ -20,7 +20,7 @@ public class SuspectsInfo : MonoBehaviour, IPlaneDisplay
         // Setup the dropdown data
         dropDownmenu.ClearOptions();
 
-        foreach(var item in player.bag.items)
+        foreach(var item in player.inventory.items)
         {
             TMP_Dropdown.OptionData temp = new TMP_Dropdown.OptionData();
             temp.text = item.name;

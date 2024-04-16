@@ -13,7 +13,7 @@ public class ListItems : MonoBehaviour
     // List all items from player
     private void OnEnable()
     {
-        Inventory inventory = player.GetComponent<Player>().bag;
+        Inventory inventory = player.GetComponent<Player>().inventory;
         int inventorySize = inventory.CurrentSize();
         int childSize = transform.childCount;
 

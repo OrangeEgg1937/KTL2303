@@ -5694,7 +5694,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   d_box: {fileID: 1411641105777432998}
   Player: {fileID: 1170864757}
-  scenario: {fileID: 0}
+  scenario: {fileID: 11400000, guid: 5b81e2f9794fe1c408635a9336846867, type: 2}
   item: {fileID: 11400000, guid: 96f2b39bef80e9f4a9daf5b67b76daa3, type: 2}
 --- !u!114 &624604033
 MonoBehaviour:
@@ -11435,6 +11435,8 @@ MonoBehaviour:
   interactionLayerMask:
     serializedVersion: 2
     m_Bits: 256
+  scenarioList: []
+  currentScenario: {fileID: 0}
   Investigative: 0
   Interrogation: 0
   Action: 0

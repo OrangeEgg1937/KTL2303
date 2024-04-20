@@ -22802,7 +22802,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2ccc1de2a3ae20e4fa260334a491bde0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLeft: 900
+  timeLeft: 210
   startCountdown: 0
   gameflow: {fileID: 1026609627}
   scenario: {fileID: 11400000, guid: 823160697a2652b4c85df8750fe2342c, type: 2}

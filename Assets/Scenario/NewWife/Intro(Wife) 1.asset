@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7da1a6de5b1369419de61cb86f0929a, type: 3}
+  m_Name: Intro(Wife) 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSet
+  content: RIchard is my husband. Although everybody say that I married with him
+    for money, but i love him very much!
+  Reward: []
+  dialogType: 2
+  option:
+  - content: who is killer?
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: d7e1af85b69501145b2591f92e7ed4d9, type: 2}
+  - content: are you killer?
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: 579d9cfbddeba8a40a7a63aa6f0ec255, type: 2}
+  - content: you look suspicious
+    containRequirement: 1
+    Requirement:
+    - {fileID: 11400000, guid: 1004919be66d02d41a208331ac429054, type: 2}
+    NextDialog: {fileID: 11400000, guid: 635b5211504259b4eb305eeaae0d9d01, type: 2}
+  - content: you look suspicious
+    containRequirement: 1
+    Requirement:
+    - {fileID: 11400000, guid: a628f98d4ad624645a6931bf9671a4ae, type: 2}
+    NextDialog: {fileID: 11400000, guid: 459b84dddd01dc546851eee3a1daf1a3, type: 2}
+  Requirement: []
+  NextDialog: {fileID: 11400000, guid: eeefa8391c3762748bb5eaa83f10f055, type: 2}

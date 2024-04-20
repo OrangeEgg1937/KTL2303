@@ -8,6 +8,10 @@ public class TimeController : MonoBehaviour
 {
     public float timeLeft = 900;
     public bool startCountdown = false;
+    public GameFlow gameflow;
+    public Scenario scenario;
+    public DialogBox dialogBox;
+    public GameObject narrator;
 
     private TextMeshProUGUI displayTime;
     [SerializeField] private GameEndProcess gameEndProcess;
@@ -24,15 +28,26 @@ public class TimeController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (startCountdown && timeLeft >= 0)
+        if (startCountdown)
         {
-            timeLeft -= Time.deltaTime;
-            UpdateTIme(timeLeft);
-        }else if(timeLeft <= 0){
-            gameEndProcess.gameEnd(1);
+            if (timeLeft >= 0)
+            {
+                timeLeft -= Time.deltaTime;
+                UpdateTIme(timeLeft);
+            }
+            else
+            {
+                startCountdown = false;
+                gameflow.gamePhrase = 1;
+                dialogBox.loadCurrentScenario(scenario, narrator);
+            }
         }
     }
+    public void resetTime()
+    {
 
+        timeLeft = 0.1f;
+    }
     void UpdateTIme(float currentTime)
     {
         currentTime += 1;

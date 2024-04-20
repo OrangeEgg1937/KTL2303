@@ -43,7 +43,7 @@ public class NPC : Character
     // NPC interact
     public void Interact()
     {
-        currentScenario = scenarioList[gameflow.killer];
+        currentScenario = scenarioList[gameflow.gamePhrase];
         dialogbox.loadCurrentScenario(currentScenario, gameObject);
     }
 

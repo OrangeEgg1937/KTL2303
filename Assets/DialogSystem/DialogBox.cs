@@ -11,6 +11,7 @@ public delegate void OnClickOption(Option option);
 */
 public class DialogBox : MonoBehaviour
 {
+    public GameFlow gameflow;
     public GameObject DialogFrame;
     public GameObject OptionList;
     public TextMeshProUGUI NameDisplay;
@@ -60,6 +61,7 @@ public class DialogBox : MonoBehaviour
 
     private void processTextDisplay()
     {
+        StopAllCoroutines();
         index = 0;
         NameDisplay.text = Name;
         textDisplay.text = string.Empty;
@@ -93,6 +95,32 @@ public class DialogBox : MonoBehaviour
     public void ProcessOption(Option option)
     {
         print(option.content);
+        //triggerred by Samentha, activate hidden dialog of Lisa
+        if (option.content == "who is killer?")
+        { 
+            if (gameflow.killer == 2)
+                Player.GetComponent<Player>().AddTrigger(Resources.Load<Trigger>("WeaponFalseRevealTrigger(PA)"));
+            else
+                Player.GetComponent<Player>().AddTrigger(Resources.Load<Trigger>("WeaponRevealTrigger(PA)"));
+        }
+        //triggerred by Mark, activate hidden dialog of Samentha
+        else if (option.content == "who is killer??")
+        {
+            if (gameflow.killer == 0)
+                Player.GetComponent<Player>().AddTrigger(Resources.Load<Trigger>("WeaponFalseRevealTrigger(Wife)"));
+            else
+                Player.GetComponent<Player>().AddTrigger(Resources.Load<Trigger>("WeaponRevealTrigger(Wife)"));
+        }
+        //triggerred by Lisa, activate hidden dialog of Mark
+        else if (option.content == "who is killer???")
+        {
+            if (gameflow.killer == 1)
+                Player.GetComponent<Player>().AddTrigger(Resources.Load<Trigger>("WeaponFalseRevealTrigger(Mark)"));
+            else
+                Player.GetComponent<Player>().AddTrigger(Resources.Load<Trigger>("WeaponRevealTrigger(Mark)"));
+        }
+
+
         List<Trigger> playerTrigger = Player.GetComponent<Player>().GetPlayerTriggerList();
         m_currentScenario.ProcessDialog(option, ref playerTrigger);
         UpdateScreen();
@@ -140,8 +168,9 @@ public class DialogBox : MonoBehaviour
     }
 
     public void loadCurrentScenario(Scenario scenario, GameObject character)
-    {        
+    {
         // Set the current scenario and current character
+        scenario.ResetScenario();
         m_currentScenario = scenario;
         m_character = character.GetComponent<Character>();
 

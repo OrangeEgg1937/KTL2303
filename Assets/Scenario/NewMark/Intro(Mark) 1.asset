@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7da1a6de5b1369419de61cb86f0929a, type: 3}
+  m_Name: Intro(Mark) 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSet
+  content: RIchard is my business partner. Although he made me lose tons of money,
+    I still see him as my best friend.
+  Reward: []
+  dialogType: 2
+  option:
+  - content: who is killer??
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: 4a7f8710d7a19cf4fa8158e9b027d503, type: 2}
+  - content: are you killer?
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: ea3902fbfc3f01f42a12d183b460084e, type: 2}
+  - content: You look suspicious
+    containRequirement: 1
+    Requirement:
+    - {fileID: 11400000, guid: fbf2e853fe62aec4ba7b4013cc543af7, type: 2}
+    NextDialog: {fileID: 11400000, guid: a8232b826c1d5f14bb97fa94ebdf491f, type: 2}
+  - content: You look suspicious
+    containRequirement: 1
+    Requirement:
+    - {fileID: 11400000, guid: c94fb8d420ccfd04485158d95e97f0ae, type: 2}
+    NextDialog: {fileID: 11400000, guid: e85fd5d66984591478de69a855480869, type: 2}
+  Requirement: []
+  NextDialog: {fileID: 11400000, guid: eeefa8391c3762748bb5eaa83f10f055, type: 2}

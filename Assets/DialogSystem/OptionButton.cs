@@ -19,11 +19,11 @@ public class OptionButton : MonoBehaviour
 {
     [SerializeField] private Button optionButton;
     [SerializeField] private TextMeshProUGUI optionText;
+    [SerializeField] public Player player;
     public void OnCreate(Option option, DialogBox d_box)
     {
         // Set the button text
         optionText.text = option.content;
-
         // link the option to the dialog box
         optionButton.onClick.AddListener(() => d_box.ProcessOption(option));
     }

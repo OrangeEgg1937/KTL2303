@@ -21,12 +21,12 @@ public class InteractableObject : MonoBehaviour
     // Interact method
     public void Interact()
     {
-        if (isChecked == 0)
+        if (isChecked == 0 && gameflow.GetItemInteract())
         {
-            gameflow.GetItemInteract();
             print("Interact with the object" + gameObject.name);
+            isChecked = 1;
         }
-        isChecked = 1;
+        
 
     }
 

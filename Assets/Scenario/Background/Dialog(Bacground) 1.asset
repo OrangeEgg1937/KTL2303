@@ -1,0 +1,25 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7da1a6de5b1369419de61cb86f0929a, type: 3}
+  m_Name: Dialog(Bacground) 1
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSet
+  content: You are a policeman. You are investigating a crime scene. A rich man called
+    Richard was murdered in his own house
+  Reward: []
+  dialogType: 2
+  option:
+  - content: continue
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: fab020706a1855243aeb0b4564702d71, type: 2}
+  Requirement: []
+  NextDialog: {fileID: 11400000, guid: eeefa8391c3762748bb5eaa83f10f055, type: 2}

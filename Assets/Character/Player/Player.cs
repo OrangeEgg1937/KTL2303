@@ -112,9 +112,14 @@ public class Player : Character
             {
                 // Interact with the object
                 InteractableObject target = nearbyObject[0].GetComponent<InteractableObject>();
+                NPC NPCtarget = nearbyObject[0].GetComponent<NPC>();
                 if (target != null) 
                 { 
                     target.Interact();
+                }
+                if (NPCtarget != null)
+                {
+                    NPCtarget.Interact();
                 }
             }
 

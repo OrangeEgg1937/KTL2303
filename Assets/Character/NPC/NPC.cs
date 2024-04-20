@@ -9,6 +9,8 @@ public class NPC : Character
     [SerializeField] Transform destination;
     // [SerializeField] InworldAIEventHandler eventHandler;
     [SerializeField] GameObject ItemsList;
+    [SerializeField] DialogBox dialogbox;
+    [SerializeField] GameFlow gameflow;
 
     // Private member of NPC
     private NavMeshAgent agent;     // NavMeshAgent for NPC movement
@@ -29,7 +31,7 @@ public class NPC : Character
 
     private void Update()
     {
-        agent.destination = destination.position;
+        //agent.destination = destination.position;
     }
 
     // NPC moving
@@ -41,7 +43,8 @@ public class NPC : Character
     // NPC interact
     public void Interact()
     {
-
+        currentScenario = scenarioList[gameflow.killer];
+        dialogbox.loadCurrentScenario(currentScenario, gameObject);
     }
 
     // When trigger is activated, generate potion

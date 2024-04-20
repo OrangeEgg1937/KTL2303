@@ -15,11 +15,19 @@ public class InteractableObject : MonoBehaviour
     [SerializeField] public List<Status> status;
     [SerializeField] public bool isPlayerInvestigated = false;
     [SerializeField] public Inventory inventory;
-    
+
+    [SerializeField] public GameFlow gameflow;
+    private int isChecked = 0;
     // Interact method
     public void Interact()
     {
-        print("Interact with the object" + gameObject.name);
+        if (isChecked == 0)
+        {
+            gameflow.GetItemInteract();
+            print("Interact with the object" + gameObject.name);
+        }
+        isChecked = 1;
+
     }
 
 /*

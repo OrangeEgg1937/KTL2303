@@ -35,7 +35,14 @@ public class DialogBox : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        DialogFrame.SetActive(false);
+
+    }
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Q))
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void OnEnable()

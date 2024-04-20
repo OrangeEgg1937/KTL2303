@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d7da1a6de5b1369419de61cb86f0929a, type: 3}
+  m_Name: Dialog(Mark)
+  m_EditorClassIdentifier: Assembly-CSharp::DialogSet
+  content: Choose Killer
+  Reward: []
+  dialogType: 2
+  option:
+  - content: Samentha(Wife)
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: 9d30e345051788c4197d0a4d49d873d4, type: 2}
+  - content: Mark(Business Partner)
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: b9b9b32069a58394db24782210d4e756, type: 2}
+  - content: Lisa(PA)
+    containRequirement: 0
+    Requirement: []
+    NextDialog: {fileID: 11400000, guid: 4efaa557e38811a4bae4b98e22b256ac, type: 2}
+  Requirement: []
+  NextDialog: {fileID: 11400000, guid: eeefa8391c3762748bb5eaa83f10f055, type: 2}

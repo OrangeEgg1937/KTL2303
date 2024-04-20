@@ -9,14 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d7da1a6de5b1369419de61cb86f0929a, type: 3}
-  m_Name: Dialog2A
+  m_Script: {fileID: 11500000, guid: e33f482fcba2bdf44ab155ab052e5d5b, type: 3}
+  m_Name: KillerMarkScenario(PA)
   m_EditorClassIdentifier: 
-  content: '2A D
-
-    I see you choose the option A'
-  Reward: []
-  dialogType: 0
-  option: []
-  Requirement: []
-  NextDialog: {fileID: 0}
+  StartingDialog: {fileID: 11400000, guid: 735fdc47b18a43c4b9241c5665a17e4f, type: 2}
+  currentDialog: {fileID: 11400000, guid: 735fdc47b18a43c4b9241c5665a17e4f, type: 2}

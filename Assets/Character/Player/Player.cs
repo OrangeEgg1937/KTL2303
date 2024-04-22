@@ -85,6 +85,11 @@ public class Player : Character
     private HashSet<MeshRenderer> m_markedObject = new HashSet<MeshRenderer>();
     void surroundingObject()
     {
+        if (isBusy)
+        {
+            return;
+        }
+
         // Find the nearby object
         numOfNearbyObject = Physics.OverlapSphereNonAlloc(transform.position, searchingDistance, nearbyObject, interactionLayerMask);
 
@@ -95,23 +100,26 @@ public class Player : Character
 
             // Adding the outline effect to the cloest object
             var currentObject = nearbyObject[0].GetComponent<MeshRenderer>();
-            var objectMaterials = currentObject.materials;
-            m_markedObject.Add(currentObject);
-            if (objectMaterials.Length == 1)
+            if (currentObject != null)
             {
-                objectMaterials = new Material[2] { objectMaterials[0], m_objectOutline };
+                var objectMaterials = currentObject.materials;
+                m_markedObject.Add(currentObject);
+                if (objectMaterials.Length == 1)
+                {
+                    objectMaterials = new Material[2] { objectMaterials[0], m_objectOutline };
+                }
+                else
+                {
+                    objectMaterials[1] = m_objectOutline;
+                }
+                nearbyObject[0].GetComponent<MeshRenderer>().materials = objectMaterials;
             }
-            else
-            {
-                objectMaterials[1] = m_objectOutline;
-            }
-            nearbyObject[0].GetComponent<MeshRenderer>().materials = objectMaterials;
 
             // Interact with the object if the E key is pressed
             if (Input.GetKeyDown(KeyCode.E))
             {
                 // Interact with the object
-                InteractableObject target = nearbyObject[0].GetComponent<InteractableObject>();
+                IInteraction target = nearbyObject[0].GetComponent<IInteraction>();
                 if (target != null) 
                 { 
                     target.Interact();

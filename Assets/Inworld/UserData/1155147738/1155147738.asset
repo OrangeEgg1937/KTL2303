@@ -1,0 +1,114 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 146eba7038a14426a7d95a5b80da5291, type: 3}
+  m_Name: 1155147738
+  m_EditorClassIdentifier: 
+  m_PlayerName: 1155147738
+  m_PlayerData: []
+  m_Workspaces:
+  - name: workspaces/default-jnoclvjf27adzm-kj9kcgq
+    displayName: Inworld AI Demos
+    experimentalFeatures: []
+    billingAccount: billing-accounts/53b7dd6c-e52a-4e88-893a-a08c3caab7e7
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes: []
+    keySecrets: []
+  - name: workspaces/ktl2303
+    displayName: KTL2303
+    experimentalFeatures: []
+    billingAccount: billing-accounts/53b7dd6c-e52a-4e88-893a-a08c3caab7e7
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes: []
+    keySecrets: []
+  - name: workspaces/ktl2303_v2
+    displayName: KTL2303 V2
+    experimentalFeatures: []
+    billingAccount: billing-accounts/53b7dd6c-e52a-4e88-893a-a08c3caab7e7
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes:
+    - name: workspaces/ktl2303_v2/scenes/richards_room
+      displayName: Richard's room
+      description: Here is Richard's room, everyone starting a lunch here and talk
+        to each other, they may like to share their feeling and their opinion with
+        Richard. Samantha is cooked the lunch, Mark is sit next to Richard and talking
+        about their business and Lisa is seems a bit admired to Richard. At the same
+        time, Richard also invite Player to join the lunch.
+      characterReferences:
+      - character: workspaces/ktl2303_v2/characters/lisa
+        characterOverloads:
+        - defaultCharacterDescription:
+            givenName: Lisa
+            description: '{character} is a personal assistance of Richard who is
+              a very rich man. {character} is very loyal to Richard and {character}
+              had a one night stand with Richard once. But recently {character} have
+              a very big argument with Richard. Now Richard is dead and {character}
+              is one of the suspects. If {character} chooses a way to kill Richard,
+              {character} would stab Richard with a knife.'
+          defaultCharacterAssets:
+            rpmModelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/f158b358-b093-4daf-923f-27467e73e2bb.glb
+            rpmImageUriPortrait: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/f158b358-b093-4daf-923f-27467e73e2bb_portrait.jpg
+            rpmImageUriPosture: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/f158b358-b093-4daf-923f-27467e73e2bb_posture.jpg
+            avatarImg: 
+            avatarImgOriginal: 
+            thumbnailProgress: 1
+            avatarProgress: 1
+      - character: workspaces/ktl2303_v2/characters/mark
+        characterOverloads:
+        - defaultCharacterDescription:
+            givenName: Mark
+            description: '{character} is a business partner of Richard who is a very
+              rich man. {character} was angry with Richard because he lost a lot
+              of money in a business deal because of Richard. Now Richard is dead
+              and {character} is one of the suspects. If {character} chooses a way
+              to kill Richard, {character} would hit Richard with a gold club.'
+          defaultCharacterAssets:
+            rpmModelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/ca82687b-82f6-4458-ad70-3723c1acf849.glb
+            rpmImageUriPortrait: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/ca82687b-82f6-4458-ad70-3723c1acf849_portrait.jpg
+            rpmImageUriPosture: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/ca82687b-82f6-4458-ad70-3723c1acf849_posture.jpg
+            avatarImg: 
+            avatarImgOriginal: 
+            thumbnailProgress: 1
+            avatarProgress: 1
+      - character: workspaces/ktl2303_v2/characters/samantha
+        characterOverloads:
+        - defaultCharacterDescription:
+            givenName: Samantha
+            description: '{character} is the wife of Richard, who is a very rich
+              man and {character} married only for money. {character} cheated on
+              Richard multiple times. Now Richard is dead and {character} is one
+              of the suspects. If {character} chooses a way to kill Richard, {character}
+              would poison Richard with poisoned wine.'
+          defaultCharacterAssets:
+            rpmModelUri: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_model/1f2d93fc-2b58-49fc-8b67-7739c8b50e60.glb
+            rpmImageUriPortrait: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/1f2d93fc-2b58-49fc-8b67-7739c8b50e60_portrait.jpg
+            rpmImageUriPosture: https://storage.googleapis.com/inworld-ai-usercontent-prod/rpm_image/1f2d93fc-2b58-49fc-8b67-7739c8b50e60_posture.jpg
+            avatarImg: 
+            avatarImgOriginal: 
+            thumbnailProgress: 1
+            avatarProgress: 1
+    keySecrets:
+    - key: 0djmOq8ZTrYsPSulp3uDoWHAexaaQW8B
+      secret: Abe3CLTF0BGMoL4YhghjburPLvbL5VCQvyJab4jPtPon8uTiCGr4yuKcgzAK4DGJ
+      state: ACTIVE
+  - name: workspaces/personaldemo
+    displayName: personaldemo
+    experimentalFeatures: []
+    billingAccount: billing-accounts/53b7dd6c-e52a-4e88-893a-a08c3caab7e7
+    meta: 
+    runtimeAccess: RUNTIME_ACCESS_PRIVATE
+    scenes: []
+    keySecrets: []
+  m_UserID: 
+  m_BillingAccount: billing-accounts/53b7dd6c-e52a-4e88-893a-a08c3caab7e7

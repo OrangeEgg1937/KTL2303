@@ -18,5 +18,6 @@ MonoBehaviour:
   Reward: []
   dialogType: 0
   option: []
-  Requirement: []
+  Requirement:
+  - {fileID: 0}
   NextDialog: {fileID: 0}

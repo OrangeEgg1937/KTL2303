@@ -9,6 +9,7 @@ using System;
 using TMPro;
 using Unity.VisualScripting;
 using System.IO;
+using UnityEngine.UI;
 
 
 public class DebugConsoleLogHandler : MonoBehaviour
@@ -21,13 +22,13 @@ public class DebugConsoleLogHandler : MonoBehaviour
 
     // Message Type Handler
     [SerializeField] private MessageHandler m_MsgHandler;
+    [SerializeField] private ScrollRect m_scrollRect;
 
     private void Awake()
     {
         Application.logMessageReceived += applicationLog;
         Debug.Log("Console init finished.");
-    } 
-
+    }
 
     private void applicationLog(string logString, string stackTrace, LogType type)
     {
@@ -64,6 +65,9 @@ public class DebugConsoleLogHandler : MonoBehaviour
 
         // Save the message into
         messageBuffer.Add(msg);
+
+        // Update the scrollbar
+        m_scrollRect.verticalNormalizedPosition = 0;
     }
 
 #if UNITY_EDITOR

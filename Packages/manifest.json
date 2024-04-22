@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.inworld.unity.core": "file:E:/Unity Project/FYP_URP/KTL2303_URP/Assets\\Inworld\\com.inworld.unity.core-3.3.1.tgz",
     "com.unity.2d.sprite": "1.0.0",
     "com.unity.ai.navigation": "1.1.5",
     "com.unity.cinemachine": "2.9.7",

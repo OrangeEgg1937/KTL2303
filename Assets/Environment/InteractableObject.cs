@@ -4,22 +4,44 @@ using UnityEngine;
 
 
 // This is a base class for all interactable objects in the game
-public class InteractableObject : MonoBehaviour
+public class InteractableObject : MonoBehaviour, IInteraction
 {
-    // Interactable object attributes
-    // We don't need the name of the object
-    // because we can get it by using gameObject.name from MonoBehaviour    
-    public const int INTERACTABLE_OBJECT_LAYER_CODE = 6;
 
     [Header("Interactable field")]
     [SerializeField] public List<Status> status;
     [SerializeField] public bool isPlayerInvestigated = false;
     [SerializeField] public Inventory inventory;
-    
+    [SerializeField] private Item weapon;
+
+    [SerializeField] private Player player;
+
+    private void Awake()
+    {
+        player = FindObjectOfType<Player>();
+    }
+
     // Interact method
     public void Interact()
     {
-        print("Interact with the object" + gameObject.name);
+        print("Player Interact with the object" + gameObject.name);
+        if(weapon != null)
+        {
+            player.inventory.AddItem(weapon);
+            weapon = null;
+        }
+    }
+
+    public void PutWeapon(Item item)
+    {
+        if (weapon != null) { return; }
+        weapon = item;
+    }
+
+    public void TakeWeapon()
+    {
+        print("NPC pick away the weapon");
+        if (weapon == null) { return; }
+        weapon = null;
     }
 
 /*

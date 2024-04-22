@@ -39,7 +39,6 @@ public class InteractableObject : MonoBehaviour, IInteraction
 
     public void TakeWeapon()
     {
-        print("NPC pick away the weapon");
         if (weapon == null) { return; }
         weapon = null;
     }

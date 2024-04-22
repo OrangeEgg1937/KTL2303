@@ -7,7 +7,7 @@ using UnityEngine;
 [Serializable]
 public class LevelBuilder : MonoBehaviour
 {
-    [Serializable]
+/*    [Serializable]
     public class LevelItems
     {
         public GameObject gameObject;
@@ -190,5 +190,5 @@ public class LevelBuilder : MonoBehaviour
         }
         return null;
     }
-
+*/
 }

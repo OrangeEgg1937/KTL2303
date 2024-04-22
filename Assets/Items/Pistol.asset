@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 4
   items_name: Book
-  description: Hope no one will be killed bi it...
+  description: Hope no one will be killed by it...
   icon: {fileID: 21300000, guid: 3c53724a2d99e2b449e595be092e2366, type: 3}
   isDiscoveredByPlayer: 0
   status: []
